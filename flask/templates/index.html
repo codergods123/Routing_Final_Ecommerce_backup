@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>TapTopUp</title>
+
+  <!-- Fonts FIRST -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Then CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+</head>
+
+
+<body>
+<header>
+<nav class="Navigation">
+  <!-- Logo -->
+  <a href="#">
+    <img src="{{ url_for('static', filename='images/Home_Logo.png')}}" alt="Home Logo" class="logo">
+  </a>
+
+  <!-- Main Navigation -->
+  <ul class="Navbar">
+    <li><a href="{{ url_for('games')}}">Games</a></li>
+    <li><a href="{{ url_for('promos')}}">Promos</a></li>
+    <li><a href="{{ url_for('register')}}">Log in</a></li>
+  </ul>
+
+  <!-- Dropdown -->
+  <ul class="Dropdown">
+    <li class="Dropdown-item">
+      <a href="#" class="Dropdown-toggle">
+        More
+        <img
+          src="https://img.icons8.com/ios-filled/16/ffffff/sort-down.png"
+          alt=""
+        >
+      </a>
+
+      <ul class="Dropdown-content">
+        <li><a href="{{ url_for('about')}}">About</a></li>
+        <li><a href="{{ url_for('contact')}}">Contact</a></li>
+        <li><a href="{{ url_for('guide')}}">Guide</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <!-- Search -->
+  <div class="search-Bar">
+    <input type="text" placeholder="Search..." class="search-input">
+    <button class="search-button">Search</button>
+  </div>
+</nav>
+
+ 
+</header>
+
+<main class="front-page">
+<h2 id="Welcome">WELCOME TO</h2>
+<h1 id="H1text"><strong>TapTopUp</h1>
+<h3 id="h3text">YOUR DESTINATION FOR EASY GAME CURRENCY TOP-UPS</h3>
+<p id="ptext">Top up your favorite games quickly and securely. Fast, reliable,<br>and convenient — start topping up now!</p>
+<a href="{{ url_for('games')}}"><button id="Enter-site">
+ENTER SITE</button></a>
+ </main>
+
+<footer>
+  <div class="footer-content">
+    <p>&copy; 2025 TapTopUp. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="{{ url_for('about')}}">About</a></li>
+      <li><a href="{{ url_for('guide')}}">Support</a></li>
+      <li><a href="mailto:ryanpolmalabanan2@gmail.com">Email us!</a></li>
+      <li><a href="{{ url_for('contact')}}">Contact</a></li>
+      <li><a href="{{ url_for('promos')}}">Promos</a></li>
+    </ul>
+
+    <div class="socials">
+      <a href="#" id="facebook-icon"><img src="{{ url_for('static', filename='images/facebook-icon.png')}}" alt="Facebook"></a> 
+      <a href="#"id="instagram-icon"><img src="{{ url_for('static', filename='images/instagram-icon.png')}}" alt="Instagram"></a> 
+      <a href="#" id="discord-icon"><img src="{{ url_for('static', filename='images/discord-icon.png')}}" alt="Discord"></a> 
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

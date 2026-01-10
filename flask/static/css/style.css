@@ -1,0 +1,919 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   
+}
+html, body{
+  height: 100%;
+  margin: 0;
+}
+body {
+    background-image: url("../images/bg.png");
+    background-repeat: no-repeat;            
+    background-size: cover;                 
+    background-position: center;            
+    height: 400px;                         
+    width: 100%;
+    min-width: 100vh;
+    background-attachment: fixed;
+}                        
+/*-------------------------------------------------INDEX--------------------------------------*/
+.Navigation {
+  display: flex;
+  align-items: center; /*Main navigation*/
+  background-color: #202020;
+}
+.Navigation :hover{
+ color: rgb(168, 6, 6);
+ text-shadow: 0 0 5px maroon;
+}
+.GamesNav{
+  display: flex;
+  align-items: center;  /*----Game pages navigation*/
+  background-color: #202020;
+}
+
+/* Search Bar */
+.search-Bar {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 20px;
+  border-radius: 10px;
+  width: 450px; 
+}
+
+.search-button {
+  background-color:maroon;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  padding: 10px;
+  height: 60px;
+}
+
+.search-button:hover{
+  background-color: rgb(194, 10, 10);
+  color: white;
+}
+.logo {
+  height: 60px;  /*---home logo---*/
+  width: 220px;
+}
+
+nav a {
+  text-decoration: none;
+  color: rgb(134, 12, 12);
+  font-weight: bold;
+  font-size: 25px;
+}
+
+nav ul { 
+   font-family:sans-serif
+  }
+
+nav li { position: relative; display: inline-block; }
+nav a { text-decoration: none; padding: 10px 15px; display: block; color: white; background-color: #202020; }
+
+.Dropdown {
+  list-style: none;
+  background-color: #202020;
+  padding: 10px;
+  margin: 0;
+  display: inline-block;
+  position: relative;
+}
+.Dropdown > li {
+  position: relative;
+}
+.Dropdown a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.Dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #222;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  top: 100%;
+  left: 0;
+  min-width: 120px;
+  border-radius: 5px;
+  z-index: 9999;
+}
+.Dropdown-content li a {
+  display: block;
+  padding: 10px;
+  color: white;
+}
+.Dropdown li:hover .Dropdown-content {
+  display: inline-block;
+}
+
+/*-----------Front page content-----------------*/
+.front-page{
+  display: flexbox;
+  text-align: center;
+  color: white;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 800;
+  margin: 8%;
+}
+#Welcome{
+  font-size: 55px;
+  margin: 2px;
+}
+#H1text{
+  font-size: 100px;
+  font-style: italic;
+  margin: 2px;
+  color: white;
+  background-color: maroon;
+  opacity: 90%;
+  border-radius: 100%;
+}
+
+#h3text{
+ margin: 10px;
+}
+
+#Enter-site{
+  padding: 15px;
+  font-size: 20px;
+  height: 60px;
+  border-radius: 10px;
+  width: 220px;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: maroon;
+  color: white;
+  margin: 30px;
+  font-family: "Inter", sans serif;
+}
+
+#Enter-site:hover{
+  background-color: rgb(194, 10, 10);
+  transition: background-color 0.3s ease;
+}
+/*----------------footer---------------------*/
+footer {
+  background-color: #202020;
+  color: #f1f1f1;
+  text-align: center;
+  padding: 30px 0;
+  font-family: 'Poppins', sans-serif;
+}
+.footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  height: 90px;
+}
+/* Footer Text */
+footer p {
+  margin-bottom: 15px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+/* Footer Links */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 15px;
+}
+.footer-links li {
+  display: inline;
+  margin: 0 10px;
+}
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-links a:hover {
+  color:maroon;
+  text-shadow: 0 0 5px maroon;
+}
+/* Social Links */
+.socials a {
+  margin: 0 5px;
+}
+#facebook-icon img{
+  width: 40px;
+}
+#instagram-icon img{
+  width: 40px;
+}
+#discord-icon img{
+  width: 40px;
+}
+/*----------------------GAMES------------------------------------------------------------------------------------------------------*/
+.p{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: white;
+  font-size: 30px;  /*---Header-----*/
+  position: relative;
+  left: 30px;
+}
+.BigLogo{
+  display: flexbox;
+  text-align: center;
+  padding: 15px;
+  opacity: 90%;
+}
+.BigLogo img{
+  border-radius: 10%;
+  height: 400px;
+}
+.Games-section{
+  font-family: "Orbitron";
+  color: white;
+  font-size: 20px;
+}
+#New{
+  position: relative;   
+  padding: 30px;
+}
+#bs{
+  width: 250px;
+  border-radius: 20px;
+}
+#bs:hover{
+  animation: lift 0.3s forwards;
+}
+#Popular{
+  position: relative;
+  padding: 30px;
+}
+.popular-grid{
+  display: flex;
+  gap: 30px;
+  padding: 30px;
+}
+#ml{
+  width: 250px;
+  border-radius: 20px;
+}
+#ml:hover{
+  animation: lift 0.3s forwards;
+}
+#valo{
+   width: 250px;
+  border-radius: 20px;
+  height: 250px;
+}
+#valo:hover{
+  animation: lift 0.3s forwards;
+}
+#codm{
+   width: 250px;
+  border-radius: 20px;
+}
+#codm:hover{
+  animation: lift 0.3s forwards;
+}
+#lol{
+   width: 250px;
+  border-radius: 20px;
+  height: 250px;
+}
+#lol:hover{
+  animation: lift 0.3s forwards;
+}
+#genshin{
+  width: 250px;
+  border-radius: 20px;
+}
+#genshin:hover{
+  animation: lift 0.3s forwards;
+}
+.valo-vid {
+ position: relative;
+ left: 250px;
+ width: 60%;
+ height: 129%;
+ margin: 50px;
+ border: none;
+ border-radius: 10px;
+}
+@keyframes lift {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+.whytaptopup {
+  text-align: center;
+  padding: 50px 20px;
+  font-family: Arial, sans-serif;
+  background-color: #222;
+}
+
+.whytaptopup h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: white;
+  font-family: "Orbitron";
+}
+
+.whytaptopup h4 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.whytaptopup p {
+  font-size: 1rem;
+  color: white;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.features figure {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.features figure:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.features img {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+.features figcaption {
+  font-size: 0.9rem;
+  color: #333;
+}
+/*-------------------LOG IN AND FAQ STYLE---------------------*/
+input[type="text"] {
+  padding: 20px;
+  border-radius: 5px;
+  width: 100%;
+  border-style: solid;
+  border-color: #000000;
+}
+label {
+  display: inline-block;
+  background: #ffffff;
+  padding: 10px 20px;
+  margin: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+/*--------------------------About---------------------------------------*/
+.about-background{
+  height: 120%;
+}
+.AboutTTU h1{
+  text-align: center;
+  font-size: 60px;
+  color: white;
+  font-family:"Orbitron";
+}
+.About-P{
+  text-align: center;
+  font-size: 22px;
+  margin-top: 30px;
+  color: white;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+/*----------------Promos--------------------------------*/
+.Promostoday h1{
+  color: white;
+  font-size: 50px;
+  margin-left: 50px;
+  margin-bottom: 30px;
+  font-family:"Orbitron";
+}
+
+.PromoAvailable, 
+.PromoAvailable th, 
+.PromoAvailable td {
+  border: 5px solid rgb(64, 2, 2);
+  border-collapse: collapse;
+  width: 80%;
+  font-size: 30px;
+  margin: 20px auto;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+.PromoAvailable th{
+  color: rgb(255, 255, 255);
+  background-color: maroon;
+}
+.PromoAvailable td{
+  background-color: rgba(175, 37, 37, 0.65);
+}
+.PromoAvailable th, .PromoAvailable td {
+  width: 50%;
+}
+.RickRoll{
+  position: relative;
+  align-items: center;
+}
+.Email{
+  margin-left: 15px;
+}
+#Valopromo{
+  color: white;
+  text-decoration: none;
+}
+#Valopromo:hover{
+  color: black;
+}
+/*---------------------------------Support deatails-----------------------------*/
+.SupportDetails {
+  font-size: 30px;
+  font-family:"Orbitron";
+  color: white;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  position: relative;
+  margin-top: 20px;
+}
+#PDFIFRAME {
+  width: 70%;
+  height: 800px;
+  border: none;
+  padding: 40px;
+  position: relative;
+  left: 230px;
+}
+/*---------------------------------------------------LOG IN-------------------------------------------------------*/
+.LogInContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.LoginBackground{
+  background-color: rgb(249, 249, 249);
+  width: 550px;
+  height: 650px;
+  position: relative;
+  padding: 20px;
+  color: rgb(0, 0, 0);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  margin-bottom: 60px;
+}
+.LoginBackground label{
+  border-style: solid;
+  border-color: #000000;
+}
+#username{
+  margin-top: 30px;
+  width: 300px;
+  height: 30px;
+}
+#email{
+  width: 325px;
+  height: 30px;
+  margin-top: 30px;
+  border: solid 2px black
+}
+#password{
+  width: 300px;
+  height: 30px;
+  margin-top: 30px;
+   border: solid 2px black
+}
+#birth{
+    width: 100px;
+  height: 30px;
+  margin-top: 30px;
+   border: solid 2px black
+}
+.signuptext{
+  font-size: 35px;
+  text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#Signupbutton{
+  font-size: 20px;
+  background-color: maroon;
+  border-radius: 10%;
+  padding: 2px;
+  color: white;
+  position: relative;
+  bottom:8px;
+}
+#Signupbutton:hover{
+  background-color: rgb(147, 42, 32);
+}
+
+#registertext{
+  color: maroon;
+}
+/*-----------------------------------CONTACTS-----------------------------------------------*/
+.ContactInformation{
+  background-color: rgb(255, 255, 255);
+  width: 550px;
+  height: 600px;
+  padding: 10px;
+  color: rgb(0, 0, 0);
+  border-style: solid;
+  color: #000000;
+ }
+ 
+.ContactContainer{
+background-color:#792c28;
+display: flex;
+height: 200%;
+align-items: center;
+justify-content: center;
+}
+
+legend{
+  padding: 0 1.5rem;
+}
+
+.FieldContainer{
+  border: 1px solid black;
+  border-radius: 1.5rem;
+}
+#ctcemail{
+  position: relative;
+  top: 25px;
+  width:40px
+
+}
+#ctcreason{
+  margin-top: 30px;
+  width: 300px;
+  height: 30px;
+}
+#message{
+  margin-top: 30px;
+  width: 510px;
+  height: 150px;
+
+}
+#ctcmessage{
+  font-size: 20px;
+  margin-top: 30px;
+  position: relative;
+  left: 180px;
+
+}
+#ctcsubmit{
+  position: relative;
+  font-size: 20px;
+  background-color: maroon;
+  border-radius: 10%;
+  padding: 2px;
+  color: white;
+}
+
+#ctcsubmit:hover{
+  background-color: rgba(184, 12, 12, 0.65);
+}
+
+#contactsupport{
+  width: 300px;
+  height: 600px;
+  border-style: solid;
+  border-color:black;
+}
+
+#faq{
+  text-align: center;
+  font-size: 60px;
+  color: rgb(133, 18, 18);
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+/*------------------------------------------pagesbackground------------------------------*/
+.promobackground{
+  height: 160%;
+  background-color: #792c28;
+}
+
+.registerbackground{
+  height: 200%;
+  background-color: #792c28;
+}
+#range {
+  font-size: 16px;
+  border: 2px solid #000;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.2s ease;
+}
+/*--------------------------------------GAMES ML RECHARGE DETAILS --------------------------------------------------*/
+.ML-PAGE{
+   display: flex;
+  flex-direction: column; /* stack items vertically */
+  justify-content: center; /* vertical centering */
+  align-items: center;     /* horizontal centering */
+  margin: 50px;
+}
+.First img{
+  width: 250px;
+  margin: 20px;
+  border-radius: 10px;
+  border: solid;
+
+}
+
+.First{
+  color: white;
+}
+#mlbbguide{
+  margin: 10px;
+  opacity: 70%;
+  color: maroon;
+  font-family:Arial, Helvetica, sans-serif ;
+}
+#userid{
+  width: 500px;
+}
+#userserver{
+  width: 500px;
+}
+.USERID{
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 1070px;
+  border-radius: 10px;
+}
+#enteruserid{
+  color: white;
+  font-family:"Orbitron";
+  background-color: maroon;
+  width: 180px;
+  border-radius: 5px;
+}
+#selectrecharge{
+ color: white;
+  font-family:"Orbitron";
+  background-color:maroon;
+  width: 250px;
+  border-radius: 5px;
+}
+.RECHARGEZONE{
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 1070px;
+  border-radius: 10px;
+  font-family: "Orbitron";
+}
+
+.Elevendias{
+ border: rgb(212, 212, 212);
+ border-radius: 10px;
+ border-style: solid;
+ width: 170px;
+ text-align: center;
+ color: rgb(153, 7, 7);
+ font-weight: bold;
+}
+.Elevendias img{
+  width: 80px;
+  height: 100px;
+}
+
+.Pricebackgroundcolor{
+  background-color:rgb(234, 234, 234);
+  border-radius: 20px;
+  
+}
+.Elevendias:hover{
+  border-color: gray;
+}
+.Hundreddias{
+  border: rgb(212, 212, 212);
+ border-radius: 10px;
+ border-style: solid;
+ width: 170px;
+ text-align: center;
+ color: rgb(153, 7, 7);
+ font-weight: bold;
+}
+
+.Hundreddias img{
+  width: 80px;
+  height: 100px;
+}
+.Hundreddias:hover{
+  border-color: gray;
+}
+.fivehdias{
+  border: rgb(212, 212, 212);
+ border-radius: 10px;
+ border-style: solid;
+ width: 170px;
+ text-align: center;
+ color: rgb(153, 7, 7);
+ font-weight: bold;
+}
+
+.fivehdias img{
+  width: 80px;
+  height: 100px;
+}
+.fivehdias:hover{
+  border-color: gray;
+}
+
+.Thousanddias{
+  border: rgb(212, 212, 212);
+ border-radius: 10px;
+ border-style: solid;
+ width: 170px;
+ text-align: center;
+ color: rgb(153, 7, 7);
+ font-weight: bold;
+}
+
+.Thousanddias img{
+  width: 80px;
+  height: 100px;
+}
+
+.Thousanddias:hover{
+  border-color: gray;
+}
+
+.UserID-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 10px;
+}
+/*---PAYMENT METHOD*/
+.Payment-Method{
+  background-color:white;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 1070px;
+  border-radius: 10px;
+}
+
+#selectpayment{
+  color: white;
+  font-family:"Orbitron";
+  background-color: maroon;
+  width: 220px;
+  border-radius: 5px;
+}
+
+.Gcash{
+ border: rgb(212, 212, 212);
+ border-radius: 10px;
+ border-style: solid;
+ width: 130px;
+ text-align: center;
+ color: rgb(153, 7, 7);
+ font-weight: bold;
+}
+.Gcash:hover{
+  border-color: gray;
+}
+
+.Maya{
+ border: rgb(212, 212, 212);
+ border-radius: 10px;
+ border-style: solid;
+ width: 130px;
+ text-align: center;
+ color: rgb(153, 7, 7);
+ font-weight: bold;
+}
+
+.Maya img{
+  width: 90px;
+}
+
+.Maya:hover{
+  border-color: gray;
+}
+
+.Visa{
+ border: rgb(212, 212, 212);
+ border-radius: 10px;
+ border-style: solid;
+ width: 130px;
+ text-align: center;
+ color: rgb(153, 7, 7);
+ font-weight: bold;
+}
+
+.Visa:hover{
+  border-color: gray;
+}
+
+.SimCard{
+ border: rgb(212, 212, 212);
+ border-radius: 10px;
+ border-style: solid;
+ width: 130px;
+ text-align: center;
+ color: rgb(153, 7, 7);
+ font-weight: bold;
+}
+
+.SimCard:hover{
+  border-color: gray;
+}
+
+.Bank{
+ border: rgb(212, 212, 212);
+ border-radius: 10px;
+ border-style: solid;
+ width: 130px;
+ text-align: center;
+ color: rgb(153, 7, 7);
+ font-weight: bold;
+}
+
+.Bank:hover{
+  border-color: gray;
+}
+
+.Buybutton{
+  background-color: white;
+  width: 280px;
+  border-radius: 10px;
+}
+
+#buy-now{
+  font-size: 20px;
+  height: 60px;
+  border-radius: 10px;
+  width: 220px;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: maroon;
+  color: white;
+  margin: 30px;
+  font-family: "Inter", sans serif;
+}
+
+/*---------------Selectable------------*/
+.recharge-grid input[type="radio"] {
+  display: none;
+}
+
+/* Default card border */
+.recharge-grid label {
+  transition: all 0.2s;
+}
+
+.recharge-grid label:has(input:checked) {
+  border: 3px solid green; /* green border */
+  background-color: #f0fdf0; /* optional light green bg */
+  color: red;
+}
+
+.recharge-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 16px;
+  margin: 20px;
+}
+
+.payment-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 16px;
+  margin: 10px;
+}
+
+.payment-grid label:has(input:checked) {
+  border: 3px solid green; /* green border */
+  background-color: #f0fdf0; /* optional light green bg */
+  color: red;
+}
+
+.payment-grid label {
+  transition: all 0.2s;
+}
+
+.payment-grid input[type="radio"] {
+  display: none;
+}
