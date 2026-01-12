@@ -25,16 +25,21 @@
         <li><a href="{{ url_for('promos')}}">Promos</a></li>       
         <li><a href="{{ url_for('register')}}">Log in</a></li>
     </ul>
-   <ul class="Dropdown">
-    <li>
-      <a href="#">
+   <!-- Dropdown -->
+  <ul class="Dropdown">
+    <li class="Dropdown-item">
+      <a href="#" class="Dropdown-toggle">
         More
-        <img src="https://img.icons8.com/ios-filled/16/ffffff/sort-down.png" alt="Sort down icon">
+        <img
+          src="https://img.icons8.com/ios-filled/16/ffffff/sort-down.png"
+          alt=""
+        >
       </a>
+
       <ul class="Dropdown-content">
         <li><a href="{{ url_for('about')}}">About</a></li>
         <li><a href="{{ url_for('contact')}}">Contact</a></li>
-        <li><a href="{{ url_for('guide')}}">Other</a></li>
+        <li><a href="{{ url_for('guide')}}">Guide</a></li>
       </ul>
     </li>
   </ul>
@@ -67,4 +72,5 @@
 
 
 </body>
+<script src="{{ url_for('static', filename='js/Script.js')}}"></script>
 </html>

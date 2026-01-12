@@ -1,36 +1,46 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;   
 }
-html, body{
+
+html, body {
   height: 100%;
   margin: 0;
 }
+
 body {
     background-image: url("../images/bg.png");
     background-repeat: no-repeat;            
     background-size: cover;                 
     background-position: center;            
-    height: 400px;                         
+    min-height: 100vh;
     width: 100%;
-    min-width: 100vh;
     background-attachment: fixed;
+    overflow-x: hidden;
 }                        
 /*-------------------------------------------------INDEX--------------------------------------*/
 .Navigation {
   display: flex;
-  align-items: center; /*Main navigation*/
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
   background-color: #202020;
+  padding: 0.5rem;
 }
-.Navigation :hover{
+
+.Navigation :hover {
  color: rgb(168, 6, 6);
  text-shadow: 0 0 5px maroon;
 }
-.GamesNav{
+
+.GamesNav {
   display: flex;
-  align-items: center;  /*----Game pages navigation*/
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
   background-color: #202020;
+  padding: 0.5rem;
 }
 
 /* Search Bar */
@@ -38,65 +48,79 @@ body {
   display: flex;
   align-items: center;
   margin-left: auto;
-  margin-right: 20px;
+  margin-right: 1.25rem;
   border-radius: 10px;
   width: 90%;
   max-width: 450px;
 }
 
-
 .search-button {
-  background-color:maroon;
+  background-color: maroon;
   color: #ffffff;
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.3s ease;
-  padding: 10px;
-  height: 60px;
+  padding: 0.625rem;
+  height: 3.75rem;
 }
 
-.search-button:hover{
+.search-button:hover {
   background-color: rgb(194, 10, 10);
   color: white;
 }
+
 .logo {
-  height: 60px;  /*---home logo---*/
-  width: 220px;
+  height: 3.75rem;
+  width: 13.75rem;
+  max-width: 100%;
 }
 
 nav a {
   text-decoration: none;
   color: rgb(134, 12, 12);
   font-weight: bold;
-  font-size: 25px;
+  font-size: clamp(1rem, 5vw, 1.5625rem);
 }
 
 nav ul { 
-   font-family:sans-serif
-  }
+   font-family: sans-serif;
+}
 
-nav li { position: relative; display: inline-block; }
-nav a { text-decoration: none; padding: 10px 15px; display: block; color: white; background-color: #202020; }
+nav li { 
+  position: relative; 
+  display: inline-block; 
+}
+
+nav a { 
+  text-decoration: none; 
+  padding: 0.625rem 0.9375rem; 
+  display: block; 
+  color: white; 
+  background-color: #202020; 
+}
 
 .Dropdown {
   list-style: none;
   background-color: #202020;
-  padding: 10px;
+  padding: 0.625rem;
   margin: 0;
   display: inline-block;
   position: relative;
 }
+
 .Dropdown > li {
   position: relative;
 }
+
 .Dropdown a {
   color: white;
   text-decoration: none;
-  padding: 10px 15px;
+  padding: 0.625rem 0.9375rem;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 0.3125rem;
 }
+
 .Dropdown-content {
   display: none;
   position: absolute;
@@ -110,57 +134,95 @@ nav a { text-decoration: none; padding: 10px 15px; display: block; color: white;
   border-radius: 5px;
   z-index: 9999;
 }
+
 .Dropdown-content li a {
   display: block;
-  padding: 10px;
+  padding: 0.625rem;
   color: white;
 }
-.Dropdown li:hover .Dropdown-content {
+
+.Dropdown li.active .Dropdown-content {
   display: inline-block;
 }
 
+.Dropdown-toggle {
+  cursor: pointer;
+  user-select: none;
+}
+
+.Dropdown-toggle img {
+  transition: transform 0.3s ease;
+}
+
+.Dropdown li.active .Dropdown-toggle img {
+  transform: rotate(180deg);
+}
+
 /*-----------Front page content-----------------*/
-.front-page{
-  display: flexbox;
+.front-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   color: white;
   font-family: "Orbitron", sans-serif;
   font-weight: 800;
-  margin: 8%;
+  padding: 2rem;
+  min-height: 60vh;
 }
-#Welcome{
-  font-size: 55px;
-  margin: 2px;
+
+#Welcome {
+  font-size: clamp(1.5rem, 8vw, 3.4375rem);
+  margin: 0.125rem;
 }
-#H1text{
-  font-size: 100px;
+
+#H1text {
+  font-size: clamp(2rem, 16vw, 6.25rem);
   font-style: italic;
-  margin: 2px;
+  margin: 0.125rem;
   color: white;
   background-color: maroon;
   opacity: 90%;
-  border-radius: 100%;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(2rem, 30vw, 8rem);
+  height: clamp(2rem, 30vw, 8rem);
+  margin: 1rem auto;
 }
 
-#h3text{
- margin: 10px;
+#h3text {
+ margin: 0.625rem;
+ font-size: clamp(0.875rem, 4vw, 1rem);
 }
 
-#Enter-site{
-  padding: 15px;
-  font-size: 20px;
-  height: 60px;
+#ptext {
+  font-size: clamp(0.75rem, 3vw, 1rem);
+}
+
+#Enter-site {
+  padding: 0.9375rem;
+  font-size: clamp(0.875rem, 3vw, 1.25rem);
+  height: auto;
+  min-height: 3.75rem;
   border-radius: 10px;
-  width: 220px;
+  width: 100%;
+  max-width: 13.75rem;
   cursor: pointer;
   font-weight: bold;
   background-color: maroon;
   color: white;
-  margin: 30px;
+  margin: 1.875rem auto;
   font-family: "Inter", sans serif;
+  border: none;
+  transition: background-color 0.3s ease;
+  touch-action: manipulation;
 }
 
-#Enter-site:hover{
+#Enter-site:hover {
   background-color: rgb(194, 10, 10);
   transition: background-color 0.3s ease;
 }
@@ -169,184 +231,240 @@ footer {
   background-color: #202020;
   color: #f1f1f1;
   text-align: center;
-  padding: 30px 0;
+  padding: 1.875rem 1rem;
   font-family: 'Poppins', sans-serif;
 }
+
 .footer-content {
-  max-width: 1000px;
+  max-width: 62.5rem;
   margin: 0 auto;
-  height: 90px;
+  width: 100%;
 }
+
 /* Footer Text */
 footer p {
-  margin-bottom: 15px;
-  font-size: 14px;
+  margin-bottom: 0.9375rem;
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
   opacity: 0.8;
 }
+
 /* Footer Links */
 .footer-links {
   list-style: none;
   padding: 0;
-  margin-bottom: 15px;
+  margin-bottom: 0.9375rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
 }
+
 .footer-links li {
   display: inline;
-  margin: 0 10px;
 }
+
 .footer-links a {
   color: #ffffff;
   text-decoration: none;
   transition: color 0.3s ease;
+  font-size: clamp(0.75rem, 2vw, 0.9rem);
 }
+
 .footer-links a:hover {
-  color:maroon;
+  color: maroon;
   text-shadow: 0 0 5px maroon;
 }
+
 /* Social Links */
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
 .socials a {
-  margin: 0 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
-#facebook-icon img{
-  width: 40px;
-}
-#instagram-icon img{
-  width: 40px;
-}
-#discord-icon img{
-  width: 40px;
+
+#facebook-icon img,
+#instagram-icon img,
+#discord-icon img {
+  width: clamp(1.875rem, 5vw, 2.5rem);
+  height: auto;
 }
 /*----------------------GAMES------------------------------------------------------------------------------------------------------*/
-.p{
+.p {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   color: white;
-  font-size: 30px;  /*---Header-----*/
+  font-size: clamp(1.25rem, 5vw, 1.875rem);
   text-align: right;
 }
-.BigLogo{
-  display: flexbox;
+
+.BigLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 15px;
+  padding: 1rem;
   opacity: 90%;
 }
-.BigLogo img{
+
+.BigLogo img {
   border-radius: 10%;
-  height: 400px;
+  width: 100%;
+  max-width: 25rem;
+  height: auto;
 }
-.Games-section{
+
+.Games-section {
   font-family: "Orbitron";
   color: white;
-  font-size: 20px;
+  font-size: clamp(1rem, 3vw, 1.25rem);
 }
-#New{
+
+#New {
   position: relative;   
-  padding: 30px;
+  padding: 1.875rem;
 }
-#bs{
-  width: 250px;
+
+#bs {
+  width: clamp(8rem, 30vw, 15.625rem);
+  height: auto;
   border-radius: 20px;
+  max-width: 100%;
 }
-#bs:hover{
+
+#bs:hover {
   animation: lift 0.3s forwards;
 }
-#Popular{
+
+#Popular {
   position: relative;
-  padding: 30px;
+  padding: 1.875rem;
 }
-.popular-grid{
+
+.popular-grid {
   display: flex;
-  gap: 30px;
-  padding: 30px;
+  gap: 1.875rem;
+  padding: 1.875rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-#ml{
-  width: 250px;
+
+#ml {
+  width: clamp(8rem, 30vw, 15.625rem);
+  height: auto;
   border-radius: 20px;
+  max-width: 100%;
 }
-#ml:hover{
+
+#ml:hover {
   animation: lift 0.3s forwards;
 }
-#valo{
-   width: 250px;
+
+#valo {
+  width: clamp(8rem, 30vw, 15.625rem);
+  height: auto;
   border-radius: 20px;
-  height: 250px;
+  max-width: 100%;
 }
-#valo:hover{
+
+#valo:hover {
   animation: lift 0.3s forwards;
 }
-#codm{
-   width: 250px;
+
+#codm {
+  width: clamp(8rem, 30vw, 15.625rem);
+  height: auto;
   border-radius: 20px;
+  max-width: 100%;
 }
-#codm:hover{
+
+#codm:hover {
   animation: lift 0.3s forwards;
 }
-#lol{
-   width: 250px;
+
+#lol {
+  width: clamp(8rem, 30vw, 15.625rem);
+  height: auto;
   border-radius: 20px;
-  height: 250px;
+  max-width: 100%;
 }
-#lol:hover{
+
+#lol:hover {
   animation: lift 0.3s forwards;
 }
-#genshin{
-  width: 250px;
+
+#genshin {
+  width: clamp(8rem, 30vw, 15.625rem);
+  height: auto;
   border-radius: 20px;
+  max-width: 100%;
 }
-#genshin:hover{
+
+#genshin:hover {
   animation: lift 0.3s forwards;
 }
+
 .valo-vid {
  position: relative;
- left: 250px;
- width: 60%;
- height: 129%;
- margin: 50px;
+ width: 90%;
+ max-width: 100%;
+ height: auto;
+ aspect-ratio: 16 / 9;
+ margin: 1.875rem auto;
  border: none;
  border-radius: 10px;
 }
+
 @keyframes lift {
-  0%   { transform: translateY(0); }
+  0% { transform: translateY(0); }
   100% { transform: translateY(-10px); }
 }
 
 .whytaptopup {
   text-align: center;
-  padding: 50px 20px;
+  padding: clamp(2rem, 8vw, 3.125rem) clamp(1rem, 5vw, 1.25rem);
   font-family: Arial, sans-serif;
   background-color: #222;
 }
 
 .whytaptopup h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+  font-size: clamp(1.5rem, 6vw, 2.5rem);
+  margin-bottom: 0.625rem;
   color: white;
   font-family: "Orbitron";
 }
 
 .whytaptopup h4 {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  margin-bottom: 1.25rem;
   color: white;
 }
 
 .whytaptopup p {
-  font-size: 1rem;
+  font-size: clamp(0.75rem, 2.5vw, 1rem);
   color: white;
-  max-width: 700px;
-  margin: 0 auto 40px auto;
+  max-width: 43.75rem;
+  margin: 0 auto 2.5rem auto;
 }
 
 .features {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
+  gap: clamp(1rem, 3vw, 1.875rem);
+  padding: 0 1rem;
 }
 
 .features figure {
   background-color: #fff;
   border-radius: 12px;
-  padding: 20px;
-  width: 200px;
+  padding: 1.25rem;
+  width: clamp(10rem, 30vw, 12.5rem);
   text-align: center;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: transform 0.3s, box-shadow 0.3s;
@@ -358,290 +476,369 @@ footer p {
 }
 
 .features img {
-  width: 60px;
-  margin-bottom: 15px;
+  width: clamp(2.5rem, 8vw, 3.75rem);
+  height: auto;
+  margin-bottom: 0.9375rem;
 }
 
 .features figcaption {
-  font-size: 0.9rem;
+  font-size: clamp(0.7rem, 2vw, 0.9rem);
   color: #333;
 }
 /*-------------------LOG IN AND FAQ STYLE---------------------*/
 input[type="text"] {
-  padding: 20px;
+  padding: 1.25rem;
   border-radius: 5px;
   width: 100%;
   border-style: solid;
   border-color: #000000;
+  font-size: 1rem;
+  box-sizing: border-box;
 }
+
 label {
   display: inline-block;
   background: #ffffff;
-  padding: 10px 20px;
-  margin: 8px;
+  padding: 0.625rem 1.25rem;
+  margin: 0.5rem;
   border-radius: 10px;
   cursor: pointer;
   transition: 0.3s;
+  font-size: clamp(0.75rem, 2vw, 1rem);
 }
+
 /*--------------------------About---------------------------------------*/
-.about-background{
-  height: 120%;
+.about-background {
+  min-height: 100vh;
 }
-.AboutTTU h1{
+
+.AboutTTU h1 {
   text-align: center;
-  font-size: 60px;
+  font-size: clamp(2rem, 10vw, 3.75rem);
   color: white;
-  font-family:"Orbitron";
+  font-family: "Orbitron";
+  padding: 1rem;
 }
-.About-P{
+
+.About-P {
   text-align: center;
-  font-size: 22px;
-  margin-top: 30px;
+  font-size: clamp(1rem, 3.5vw, 1.375rem);
+  margin-top: 1.875rem;
   color: white;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 0 1rem;
 }
 
 /*----------------Promos--------------------------------*/
-.Promostoday h1{
+.Promostoday h1 {
   color: white;
-  font-size: 50px;
-  margin-left: 50px;
-  margin-bottom: 30px;
-  font-family:"Orbitron";
+  font-size: clamp(2rem, 10vw, 3.125rem);
+  margin-left: clamp(1rem, 5vw, 3.125rem);
+  margin-bottom: 1.875rem;
+  font-family: "Orbitron";
 }
 
 .PromoAvailable, 
 .PromoAvailable th, 
 .PromoAvailable td {
-  border: 5px solid rgb(64, 2, 2);
+  border: clamp(0.25rem, 1vw, 0.3125rem) solid rgb(64, 2, 2);
   border-collapse: collapse;
-  width: 80%;
-  font-size: 30px;
-  margin: 20px auto;
+  width: 90%;
+  max-width: 100%;
+  font-size: clamp(1rem, 3vw, 1.875rem);
+  margin: 1.25rem auto;
   color: rgb(255, 255, 255);
   text-align: center;
+  overflow-x: auto;
 }
-.PromoAvailable th{
+
+.PromoAvailable th {
   color: rgb(255, 255, 255);
   background-color: maroon;
 }
-.PromoAvailable td{
+
+.PromoAvailable td {
   background-color: rgba(175, 37, 37, 0.65);
+  padding: 0.5rem;
 }
+
 .PromoAvailable th, .PromoAvailable td {
   width: 50%;
 }
-.RickRoll{
+
+.RickRoll {
   position: relative;
   align-items: center;
 }
-.Email{
-  margin-left: 15px;
+
+.Email {
+  margin-left: 0.9375rem;
 }
-#Valopromo{
+
+#Valopromo {
   color: white;
   text-decoration: none;
 }
-#Valopromo:hover{
+
+#Valopromo:hover {
   color: black;
 }
-/*---------------------------------Support deatails-----------------------------*/
+/*---------------------------------Support details-----------------------------*/
 .SupportDetails {
-  font-size: 30px;
-  font-family:"Orbitron";
+  font-size: clamp(1.5rem, 5vw, 1.875rem);
+  font-family: "Orbitron";
   color: white;
   text-align: center;
   justify-content: center;
   align-items: center;
-  padding: 40px;
+  padding: clamp(1.5rem, 5vw, 2.5rem);
   position: relative;
-  margin-top: 20px;
+  margin-top: 1.25rem;
 }
+
 #PDFIFRAME {
-  width: 70%;
-  height: 800px;
+  width: 90%;
+  max-width: 100%;
+  height: clamp(300px, 80vh, 50rem);
   border: none;
-  padding: 40px;
+  padding: clamp(1rem, 3vw, 2.5rem);
   position: relative;
-  left: 230px;
+  left: 0;
+  border-radius: 10px;
+  margin: 0 auto;
 }
 /*---------------------------------------------------LOG IN-------------------------------------------------------*/
-.LogInContainer{
+.LogInContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  min-height: 100vh;
+  padding: 1rem;
 }
-.LoginBackground{
+
+.LoginBackground {
   background-color: rgb(249, 249, 249);
-  width: 550px;
-  height: 650px;
-  position: relative;
-  padding: 20px;
+  width: 100%;
+  max-width: 34.375rem;
+  height: auto;
+  padding: 1.25rem;
   color: rgb(0, 0, 0);
   border: 1px solid rgba(0, 0, 0, 0.3);
-  margin-bottom: 60px;
+  margin-bottom: 3.75rem;
+  border-radius: 10px;
 }
-.LoginBackground label{
+
+.LoginBackground label {
   border-style: solid;
   border-color: #000000;
 }
-#username{
-  margin-top: 30px;
-  width: 300px;
-  height: 30px;
+
+#username {
+  margin-top: 1.875rem;
+  width: 100%;
+  height: auto;
+  min-height: 2.5rem;
+  padding: 0.5rem;
+  box-sizing: border-box;
 }
-#email{
-  width: 325px;
-  height: 30px;
-  margin-top: 30px;
-  border: solid 2px black
+
+#email {
+  width: 100%;
+  height: auto;
+  min-height: 2.5rem;
+  margin-top: 1.875rem;
+  border: solid 2px black;
+  padding: 0.5rem;
+  box-sizing: border-box;
 }
-#password{
-  width: 300px;
-  height: 30px;
-  margin-top: 30px;
-   border: solid 2px black
+
+#password {
+  width: 100%;
+  height: auto;
+  min-height: 2.5rem;
+  margin-top: 1.875rem;
+  border: solid 2px black;
+  padding: 0.5rem;
+  box-sizing: border-box;
 }
-#birth{
-    width: 100px;
-  height: 30px;
-  margin-top: 30px;
-   border: solid 2px black
+#birth {
+    width: 100%;
+    height: auto;
+    min-height: 2.5rem;
+    margin-top: 1.875rem;
+    border: solid 2px black;
+    padding: 0.5rem;
+    box-sizing: border-box;
 }
-.signuptext{
-  font-size: 35px;
+
+.signuptext {
+  font-size: clamp(1.5rem, 5vw, 2.1875rem);
   text-align: center;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
-#Signupbutton{
-  font-size: 20px;
+
+#Signupbutton {
+  font-size: clamp(0.875rem, 2.5vw, 1.25rem);
   background-color: maroon;
   border-radius: 10%;
-  padding: 2px;
+  padding: 0.5rem 1rem;
   color: white;
-  position: relative;
-  bottom:8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-#Signupbutton:hover{
+
+#Signupbutton:hover {
   background-color: rgb(147, 42, 32);
 }
 
-#registertext{
+#registertext {
   color: maroon;
 }
 /*-----------------------------------CONTACTS-----------------------------------------------*/
-.ContactInformation{
+.ContactInformation {
   background-color: rgb(255, 255, 255);
-  width: 550px;
-  height: 600px;
-  padding: 10px;
+  width: 100%;
+  max-width: 34.375rem;
+  height: auto;
+  padding: 1rem;
   color: rgb(0, 0, 0);
   border-style: solid;
-  color: #000000;
+  border-radius: 10px;
  }
  
-.ContactContainer{
-background-color:#792c28;
-display: flex;
-height: 200%;
-align-items: center;
-justify-content: center;
+.ContactContainer {
+  background-color: #792c28;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1.5rem;
 }
 
-legend{
+legend {
   padding: 0 1.5rem;
+  font-size: clamp(0.875rem, 2vw, 1rem);
 }
 
-.FieldContainer{
+.FieldContainer {
   border: 1px solid black;
   border-radius: 1.5rem;
+  width: 100%;
+  max-width: 34.375rem;
 }
-#ctcemail{
-  position: relative;
-  top: 25px;
-  width:40px
 
-}
-#ctcreason{
-  margin-top: 30px;
-  width: 300px;
-  height: 30px;
-}
-#message{
-  margin-top: 30px;
-  width: 510px;
-  height: 150px;
-
-}
-#ctcmessage{
-  font-size: 20px;
-  margin-top: 30px;
+#ctcemail {
   position: relative;
-  left: 180px;
-
+  top: 1.5625rem;
+  width: 100%;
+  max-width: 2.5rem;
+  box-sizing: border-box;
 }
-#ctcsubmit{
+
+#ctcreason {
+  margin-top: 1.875rem;
+  width: 100%;
+  height: auto;
+  min-height: 2.5rem;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+#message {
+  margin-top: 1.875rem;
+  width: 100%;
+  height: auto;
+  min-height: 9.375rem;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+#ctcmessage {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  margin-top: 1.875rem;
   position: relative;
-  font-size: 20px;
+  left: 0;
+}
+
+#ctcsubmit {
+  position: relative;
+  font-size: clamp(0.875rem, 2.5vw, 1.25rem);
   background-color: maroon;
   border-radius: 10%;
-  padding: 2px;
+  padding: 0.5rem 1rem;
   color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1.875rem;
+  width: auto;
 }
 
-#ctcsubmit:hover{
+#ctcsubmit:hover {
   background-color: rgba(184, 12, 12, 0.65);
 }
 
-#contactsupport{
-  width: 300px;
-  height: 600px;
+#contactsupport {
+  width: 100%;
+  max-width: 18.75rem;
+  height: auto;
+  min-height: 37.5rem;
   border-style: solid;
-  border-color:black;
+  border-color: black;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
-#faq{
+#faq {
   text-align: center;
-  font-size: 60px;
+  font-size: clamp(1.875rem, 10vw, 3.75rem);
   color: rgb(133, 18, 18);
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 /*------------------------------------------pagesbackground------------------------------*/
-.promobackground{
-  height: 160%;
+.promobackground {
+  min-height: 100vh;
   background-color: #792c28;
 }
 
-.registerbackground{
-  height: 200%;
+.registerbackground {
+  min-height: 100vh;
   background-color: #792c28;
 }
+
 #range {
-  font-size: 16px;
+  font-size: 1rem;
   border: 2px solid #000;
   border-radius: 8px;
   outline: none;
   transition: 0.2s ease;
+  width: 100%;
+  max-width: 100%;
+  padding: 0.5rem;
+  box-sizing: border-box;
 }
 /*--------------------------------------GAMES ML RECHARGE DETAILS - CODASHOP STYLE --------------------------------------------------*/
 .ML-PAGE {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 20px;
+  max-width: 75rem;
+  margin: 2.5rem auto;
+  padding: 0 1rem;
+  width: 100%;
 }
 
 .First {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 }
 
 .First img {
-  width: 200px;
+  width: clamp(8rem, 40vw, 12.5rem);
   height: auto;
   border-radius: 15px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
+  max-width: 100%;
 }
 
 .First img:hover {
@@ -653,8 +850,8 @@ legend{
 .RECHARGEZONE,
 .Payment-Method {
   background: white;
-  padding: 30px;
-  margin-bottom: 30px;
+  padding: clamp(1.5rem, 5vw, 1.875rem);
+  margin-bottom: 1.875rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   width: 100%;
@@ -665,12 +862,12 @@ legend{
 #selectrecharge,
 #selectpayment {
   display: block;
-  font-size: 18px;
+  font-size: clamp(1rem, 3vw, 1.125rem);
   font-weight: 600;
   color: #222;
   background: none;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
   padding: 0;
   border: none;
   font-family: "Orbitron", sans-serif;
@@ -681,12 +878,13 @@ legend{
 #userid,
 #userserver {
   width: 100%;
-  padding: 12px 15px;
+  padding: 0.75rem 0.9375rem;
   border: 2px solid #e0e0e0;
   border-radius: 8px;
-  font-size: 15px;
+  font-size: clamp(0.875rem, 2vw, 0.9375rem);
   transition: all 0.3s ease;
-  margin-bottom: 15px;
+  margin-bottom: 0.9375rem;
+  box-sizing: border-box;
 }
 
 #userid:focus,
@@ -697,27 +895,27 @@ legend{
 }
 
 #mlbbguide {
-  font-size: 13px;
+  font-size: clamp(0.75rem, 2vw, 0.8125rem);
   color: #666;
   background: #f9f9f9;
-  padding: 12px;
+  padding: 0.75rem;
   border-radius: 8px;
-  margin-top: 15px;
+  margin-top: 0.9375rem;
   line-height: 1.6;
 }
 
 .UserID-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.25rem;
   margin-bottom: 0;
 }
 
 /* Recharge/Diamond Cards */
 .recharge-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.9375rem;
   margin: 0;
 }
 
@@ -729,13 +927,14 @@ legend{
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 15px;
+  padding: 0.9375rem;
   border: 2px solid #e0e0e0;
   border-radius: 10px;
   text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
   background: #fff;
+  touch-action: manipulation;
 }
 
 .recharge-grid label:hover {
@@ -753,8 +952,8 @@ legend{
 .recharge-grid label p {
   font-weight: 600;
   color: #222;
-  margin: 10px 0 8px 0;
-  font-size: 15px;
+  margin: 0.625rem 0 0.5rem 0;
+  font-size: clamp(0.75rem, 2vw, 0.9375rem);
 }
 
 .Elevendias,
@@ -763,50 +962,51 @@ legend{
 .Thousanddias {
   border: none !important;
   width: 100% !important;
-  padding: 15px !important;
+  padding: 0.9375rem !important;
   border-radius: 10px !important;
   text-align: center;
   color: inherit !important;
   font-weight: 600;
   background: white !important;
+  box-sizing: border-box;
 }
 
 .Elevendias img,
 .Hundreddias img,
 .fivehdias img,
 .Thousanddias img {
-  width: 70px;
-  height: 85px;
+  width: clamp(3rem, 8vw, 4.375rem);
+  height: auto;
   object-fit: contain;
 }
 
 .Pricebackgroundcolor {
   background: #f5f5f5;
-  padding: 10px;
+  padding: 0.625rem;
   border-radius: 8px;
-  margin-top: 10px;
-  font-size: 14px;
+  margin-top: 0.625rem;
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
   font-weight: 600;
   color: #222;
 }
 
 .Pricebackgroundcolor mark {
   background: #fff3cd;
-  padding: 2px 5px;
+  padding: 0.125rem 0.3125rem;
   border-radius: 4px;
-  margin: 0 3px;
+  margin: 0 0.1875rem;
 }
 
 .Pricebackgroundcolor del {
   color: #999;
-  font-size: 12px;
+  font-size: clamp(0.7rem, 1.5vw, 0.75rem);
 }
 
 /* Payment Method Cards */
 .payment-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 0.9375rem;
   margin: 0;
 }
 
@@ -819,7 +1019,7 @@ legend{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px 15px;
+  padding: 1.25rem 0.9375rem;
   border: 2px solid #e0e0e0;
   border-radius: 10px;
   text-align: center;
@@ -827,6 +1027,7 @@ legend{
   transition: all 0.3s ease;
   background: #fff;
   min-height: 120px;
+  touch-action: manipulation;
 }
 
 .payment-grid label:hover {
@@ -853,6 +1054,7 @@ legend{
   color: inherit !important;
   font-weight: 600;
   background: transparent !important;
+  box-sizing: border-box;
 }
 
 .Gcash img,
@@ -860,9 +1062,9 @@ legend{
 .Visa img,
 .SimCard img,
 .Bank img {
-  width: 60px;
+  width: clamp(2.5rem, 8vw, 3.75rem);
   height: auto;
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
   object-fit: contain;
 }
 
@@ -871,25 +1073,27 @@ legend{
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-top: 30px;
+  margin-top: 1.875rem;
+  padding: 0 1rem;
 }
 
 #buy-now {
-  font-size: 16px;
-  padding: 14px 50px;
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
+  padding: 0.875rem 2rem;
   height: auto;
-  width: auto;
-  min-width: 220px;
+  width: 100%;
+  max-width: 13.75rem;
   border-radius: 8px;
   border: none;
   cursor: pointer;
   font-weight: 600;
   background: linear-gradient(135deg, maroon 0%, #a80600 100%);
   color: white;
-  margin: 0;
+  margin: 0 auto;
   font-family: "Inter", sans-serif;
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(128, 0, 0, 0.2);
+  touch-action: manipulation;
 }
 
 #buy-now:hover {
@@ -903,697 +1107,310 @@ legend{
 }
 
 /*================================================
-   RESPONSIVE DESIGN - MOBILE VIEW
+   RESPONSIVE DESIGN - TABLET & SMALLER SCREENS
    ================================================*/
 
-/* Tablets and smaller screens (768px and below) */
+/* Tablets (768px and below) */
 @media (max-width: 768px) {
-  /* Navigation */
-  .Navigation, .GamesNav {
-    flex-direction: column;
-    padding: 10px;
-  }
-
-  .logo {
-    height: 40px;
-    width: 150px;
-    margin-bottom: 10px;
-  }
-
-  /* Navbar */
-  .Navbar {
-    display: flex !important;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-left: 0;
-    width: 100%;
-    justify-content: center;
-  }
-
-  nav a {
-    font-size: 16px;
-    padding: 8px 10px;
-  }
-
-  /* Search Bar */
-  .search-Bar {
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 10px;
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .search-input {
-    font-size: 14px;
-  }
-
-  .search-button {
-    padding: 8px;
-    height: 40px;
-    font-size: 14px;
-  }
-
-  /* Front page */
-  .front-page {
-    margin: 20px;
-  }
-
-  #Welcome {
-    font-size: 32px;
-  }
-
-  #H1text {
-    font-size: 48px;
-    border-radius: 50%;
-  }
-
-  #h3text {
-    font-size: 16px;
-  }
-
-  #ptext {
-    font-size: 14px;
-  }
-
-  #Enter-site {
-    padding: 12px;
-    font-size: 16px;
-    height: 45px;
-    width: 180px;
-    margin: 20px 10px;
-  }
-
-  /* Footer */
-  .footer-content {
-    height: auto;
-    padding: 15px;
-  }
-
-  footer p {
-    font-size: 12px;
-    margin-bottom: 10px;
-  }
-
-  .footer-links li {
-    display: block;
-    margin: 5px 0;
-  }
-
-  #facebook-icon img,
-  #instagram-icon img,
-  #discord-icon img {
-    width: 30px;
-  }
-
-  /* Games Section */
-  .BigLogo img {
-    height: 250px;
-    width: auto;
-  }
-
-  .popular-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    padding: 15px;
-    justify-content: center;
-  }
-
-  #bs, #ml, #valo, #codm, #lol, #genshin {
-    width: 150px;
-    height: auto;
-  }
-
-  .valo-vid {
-    position: relative;
-    left: 0;
-    width: 100%;
-    height: auto;
-    margin: 20px 0;
-    padding: 0 15px;
-  }
-
-  .Games-section {
-    font-size: 16px;
-  }
-
-  #New, #Popular {
-    padding: 20px 15px;
-    font-size: 24px;
-  }
-
-  /* Features */
-  .features {
-    gap: 15px;
-  }
-
-  .features figure {
-    width: 150px;
-    padding: 15px;
-  }
-
-  .features img {
-    width: 50px;
-  }
-
-  /* About Section */
-  .about-background {
-    height: auto;
-  }
-
-  .AboutTTU h1 {
-    font-size: 36px;
-  }
-
-  .About-P {
-    font-size: 16px;
-    padding: 15px;
-  }
-
-  /* Promos Table */
-  .Promostoday h1 {
-    font-size: 32px;
-    margin-left: 15px;
-  }
-
-  .PromoAvailable, 
-  .PromoAvailable th, 
-  .PromoAvailable td {
-    width: 95%;
-    font-size: 14px;
-    margin: 10px auto;
-  }
-
-  /* ML/Game Pages */
-  .ML-PAGE {
-    margin: 15px;
-  }
-
-  .First img {
-    width: 180px;
-  }
-
-  .USERID, .RECHARGEZONE, .Payment-Method {
-    width: 100%;
-    padding: 20px;
-    margin-bottom: 20px;
-  }
-
-  #userid, #userserver {
-    width: 100%;
-  }
-
   .UserID-grid {
     grid-template-columns: 1fr;
-    gap: 15px;
   }
 
   .recharge-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .payment-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .recharge-grid label {
-    padding: 12px;
-  }
-
-  .payment-grid label {
-    padding: 15px 10px;
-    min-height: 100px;
-  }
-
-  .Elevendias, .Hundreddias, .fivehdias, .Thousanddias {
-    width: 100%;
-  }
-
-  .Elevendias img, .Hundreddias img, .fivehdias img, .Thousanddias img {
-    width: 50px;
-    height: 60px;
-  }
-
-  .Gcash, .Maya, .Visa, .SimCard, .Bank {
-    width: 100%;
-  }
-
-  .Maya img {
-    width: 50px;
-  }
-
-  #enteruserid, #selectrecharge, #selectpayment {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-
-  #mlbbguide {
-    font-size: 12px;
-  }
-
-  /* Login/Register */
-  .LoginBackground, .ContactInformation {
-    width: 95%;
-    height: auto;
-    padding: 15px;
-    margin: 10px auto 30px;
-  }
-
-  .signuptext {
-    font-size: 24px;
-  }
-
-  #username, #email, #password, #birth {
-    width: 100%;
-    margin-top: 15px;
-    height: 40px;
-  }
-
-  #message, #ctcreason {
-    width: 100%;
-  }
-
-  #ctcmessage, #ctcsubmit {
-    position: relative;
-    left: 0;
-    margin-top: 15px;
-  }
-
-  #PDFIFRAME {
-    width: 100%;
-    height: 600px;
-    padding: 0;
-    left: 0;
-  }
-
-  .SupportDetails {
-    font-size: 18px;
-    padding: 20px;
-  }
-
-  /* Dropdown */
-  .Dropdown-content {
-    min-width: 100px;
-  }
-
-  /* Why TapTopup Section */
-  .whytaptopup h1 {
-    font-size: 1.8rem;
-  }
-
-  .whytaptopup h4 {
-    font-size: 1.2rem;
-  }
-
-  .whytaptopup p {
-    font-size: 0.9rem;
+  .popular-grid {
+    gap: 1rem;
   }
 }
 
-/* Mobile phones (480px and below) */
-@media (max-width: 480px) {
-  /* Navigation */
-  .Navigation, .GamesNav {
+/* Small devices (576px and below) */
+@media (max-width: 576px) {
+  /* Navigation - stack vertically */
+  .Navigation,
+  .GamesNav {
     flex-direction: column;
-    padding: 8px;
+    gap: 0.5rem;
+    padding: 0.5rem;
   }
 
   .logo {
-    height: 35px;
-    width: 120px;
-    margin-bottom: 10px;
+    width: 100%;
+    max-width: 10rem;
+    height: auto;
   }
 
-  /* Navbar */
   .Navbar {
     width: 100%;
     justify-content: center;
-    gap: 5px;
+    gap: 0.5rem;
   }
 
   nav a {
-    font-size: 14px;
-    padding: 6px 8px;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
   }
 
-  /* Search Bar */
   .search-Bar {
-    margin-top: 10px;
-    width: 100%;
+    width: 100% !important;
+    margin: 0.5rem 0 !important;
     order: 3;
-  }
-
-  .search-input {
-    font-size: 12px;
-    padding: 8px;
-  }
-
-  .search-button {
-    padding: 6px;
-    height: 35px;
-    font-size: 12px;
   }
 
   /* Front page */
   .front-page {
-    margin: 15px;
-    padding: 10px;
-  }
-
-  #Welcome {
-    font-size: 24px;
+    padding: 1rem;
+    min-height: auto;
   }
 
   #H1text {
-    font-size: 36px;
-  }
-
-  #h3text {
-    font-size: 14px;
-  }
-
-  #ptext {
-    font-size: 12px;
+    width: clamp(4rem, 50vw, 6rem);
+    height: clamp(4rem, 50vw, 6rem);
+    font-size: clamp(1.5rem, 12vw, 3rem);
   }
 
   #Enter-site {
-    padding: 10px;
-    font-size: 14px;
-    height: 40px;
-    width: 150px;
-    margin: 15px auto;
+    width: 100%;
+    max-width: 10rem;
+    padding: 0.75rem;
   }
 
   /* Footer */
   .footer-content {
-    height: auto;
+    padding: 1rem;
   }
 
-  footer {
-    padding: 15px 0;
-  }
-
-  footer p {
-    font-size: 11px;
+  .footer-links {
+    gap: 0.5rem;
   }
 
   .footer-links li {
-    display: block;
-    margin: 3px 0;
+    font-size: 0.75rem;
   }
 
-  #facebook-icon img,
-  #instagram-icon img,
-  #discord-icon img {
-    width: 25px;
-  }
-
-  .socials a {
-    margin: 0 3px;
+  .socials {
+    gap: 0.3rem;
   }
 
   /* Games Section */
-  .BigLogo img {
-    height: 200px;
-    width: auto;
-  }
-
   .popular-grid {
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 10px;
+    gap: 0.75rem;
+    padding: 0.75rem;
   }
 
   #bs, #ml, #valo, #codm, #lol, #genshin {
-    width: 120px;
+    width: clamp(6rem, 25vw, 12rem);
   }
 
-  .Games-section {
-    font-size: 14px;
-  }
-
-  #New, #Popular {
-    font-size: 20px;
-    padding: 15px;
-    margin: 10px 0;
+  .BigLogo {
+    padding: 0.5rem;
   }
 
   /* Features */
   .features {
-    flex-direction: column;
-    align-items: center;
+    gap: 1rem;
   }
 
   .features figure {
-    width: 100%;
-    max-width: 150px;
+    width: clamp(8rem, 40vw, 11rem);
+    padding: 1rem;
   }
 
-  .features img {
-    width: 45px;
-  }
-
-  /* About Section */
+  /* About */
   .AboutTTU h1 {
-    font-size: 28px;
+    padding: 0.5rem;
   }
 
   .About-P {
-    font-size: 14px;
-    padding: 10px;
+    padding: 0.5rem;
   }
 
-  /* Promos Table */
+  /* Promos */
   .Promostoday h1 {
-    font-size: 24px;
-    margin-left: 10px;
+    margin-left: 1rem;
+    font-size: 1.5rem;
   }
 
-  .PromoAvailable, 
-  .PromoAvailable th, 
+  .PromoAvailable,
+  .PromoAvailable th,
   .PromoAvailable td {
-    width: 100%;
-    font-size: 12px;
-    border: 3px solid rgb(64, 2, 2);
+    width: 95%;
+    font-size: clamp(0.75rem, 2vw, 1rem);
+    border-width: 2px;
+    padding: 0.5rem;
   }
 
-  .PromoAvailable th, .PromoAvailable td {
-    padding: 8px 5px;
+  /* Support/PDF */
+  #PDFIFRAME {
+    height: 400px;
+    padding: 0;
+  }
+
+  .SupportDetails {
+    padding: 1rem;
+    font-size: 1.25rem;
   }
 
   /* ML/Game Pages */
   .ML-PAGE {
-    margin: 10px;
+    padding: 0 0.75rem;
+    margin: 1rem auto;
   }
 
-  .First img {
-    width: 150px;
+  .USERID,
+  .RECHARGEZONE,
+  .Payment-Method {
+    padding: 1rem;
+    margin-bottom: 1rem;
   }
 
-  .USERID, .RECHARGEZONE, .Payment-Method {
-    width: 100%;
-    padding: 15px;
-    border-radius: 10px;
-  }
-
-  #userid, #userserver {
-    width: 100%;
-    font-size: 14px;
+  #enteruserid,
+  #selectrecharge,
+  #selectpayment {
+    font-size: 1rem;
+    margin-bottom: 1rem;
   }
 
   .UserID-grid {
-    grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 1rem;
   }
 
   .recharge-grid {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-  .payment-grid {
-    grid-template-columns: 1fr;
-    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
   }
 
   .recharge-grid label {
-    padding: 12px;
-    border-radius: 8px;
+    padding: 0.75rem;
+  }
+
+  .recharge-grid label p {
+    margin: 0.5rem 0 0.3rem 0;
+  }
+
+  .payment-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
   }
 
   .payment-grid label {
-    padding: 12px 8px;
-    min-height: 90px;
+    padding: 1rem 0.75rem;
+    min-height: 100px;
   }
 
-  .Elevendias, .Hundreddias, .fivehdias, .Thousanddias {
-    width: 100%;
-    border-radius: 8px;
-  }
-
-  .Elevendias img, .Hundreddias img, .fivehdias img, .Thousanddias img {
-    width: 45px;
-    height: 55px;
-  }
-
-  .Gcash, .Maya, .Visa, .SimCard, .Bank {
-    width: 100%;
-  }
-
-  .Maya img {
-    width: 50px;
-  }
-
-  #enteruserid, #selectrecharge, #selectpayment {
-    width: 100%;
-    padding: 0;
-    font-size: 16px;
+  .Elevendias img,
+  .Hundreddias img,
+  .fivehdias img,
+  .Thousanddias img {
+    width: clamp(2rem, 6vw, 3rem);
   }
 
   #mlbbguide {
-    font-size: 11px;
-    margin: 10px 0;
+    font-size: clamp(0.7rem, 1.5vw, 0.8rem);
+  }
+
+  .Buybutton {
+    padding: 0 0.5rem;
   }
 
   #buy-now {
     width: 100%;
-    padding: 12px 20px;
-    min-width: auto;
-    font-size: 14px;
-    margin: 20px 0;
+    max-width: none;
+    font-size: 1rem;
   }
 
   /* Login/Register */
-  .LoginBackground, .ContactInformation {
+  .LoginBackground,
+  .ContactInformation {
+    max-width: 100%;
     width: 100%;
-    height: auto;
-    padding: 12px;
-    margin: 10px auto 20px;
+    padding: 1rem;
+    margin: 0.5rem 0 2rem;
     border-radius: 8px;
   }
 
   .LogInContainer {
-    padding: 10px;
+    padding: 0.5rem;
   }
 
-  .signuptext {
-    font-size: 20px;
-    margin-bottom: 15px;
-  }
-
-  #username, #email, #password, #birth {
-    width: 100%;
-    margin-top: 12px;
-    height: 38px;
-    font-size: 14px;
-    padding: 8px;
+  #username,
+  #email,
+  #password,
+  #birth {
+    padding: 0.5rem;
+    margin-top: 1rem;
   }
 
   label {
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0.25rem;
     display: block;
-    margin: 10px 0;
-    padding: 8px 15px;
-    width: auto;
   }
 
-  #message, #ctcreason {
+  #message,
+  #ctcreason {
+    padding: 0.5rem;
+  }
+
+  #ctcmessage,
+  #ctcsubmit,
+  #Signupbutton {
     width: 100%;
-    font-size: 14px;
-  }
-
-  #message {
-    height: 100px;
-  }
-
-  #ctcmessage {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-
-  #ctcsubmit, #Signupbutton, #buy-now {
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
-    height: auto;
-    margin: 10px 0;
-  }
-
-  .Buybutton {
-    width: 100%;
-  }
-
-  #PDFIFRAME {
-    width: 100%;
-    height: 500px;
-    padding: 0;
     left: 0;
-    border-radius: 5px;
-  }
-
-  .SupportDetails {
-    font-size: 16px;
-    padding: 15px;
+    margin: 1rem 0;
+    padding: 0.75rem;
   }
 
   /* Contact */
   .ContactContainer {
-    height: auto;
-    flex-direction: column;
-    padding: 15px 0;
+    min-height: auto;
+    padding: 1rem;
   }
 
   .FieldContainer {
-    width: 95%;
-    margin: 0 auto 15px;
+    width: 100%;
+    border-radius: 1rem;
   }
 
   /* Dropdown */
   .Dropdown-content {
-    min-width: 100px;
-    top: auto;
-    bottom: -100px;
+    /* place dropdown directly under its toggle on small screens */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    bottom: auto;
+    z-index: 9999;
   }
 
+  /* Section headers */
   .p {
-    font-size: 16px;
     text-align: center;
-    margin-top: 10px;
+    font-size: 1.125rem;
+    margin: 0.5rem 0;
   }
 
-  /* Why TapTopup Section */
-  .whytaptopup {
-    padding: 20px 10px;
+  #New,
+  #Popular {
+    padding: 1rem 0.75rem;
+    font-size: 1.25rem;
   }
 
-  .whytaptopup h1 {
-    font-size: 1.5rem;
+  /* Animations - optimize for touch */
+  * {
+    -webkit-tap-highlight-color: transparent;
   }
 
-  .whytaptopup h4 {
-    font-size: 1rem;
-  }
-
-  .whytaptopup p {
-    font-size: 0.85rem;
-  }
-
-  /* Body backgrounds */
-  body {
-    height: auto;
-    min-height: 100vh;
-  }
-
-  .about-background,
-  .promobackground,
-  .registerbackground {
-    height: auto;
-  }
-
-  /* Buttons */
-  button {
-    font-size: 14px;
+  button,
+  [type="button"],
+  [type="submit"],
+  input[type="radio"] + label {
+    min-height: 44px;
+    min-width: 44px;
   }
 }

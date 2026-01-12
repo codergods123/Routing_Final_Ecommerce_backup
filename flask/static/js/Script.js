@@ -22,4 +22,30 @@ document.addEventListener("DOMContentLoaded", function() {
       alert("Top Up successfully. Thanks for purchasing!");
     });
   }
+
+  // Dropdown toggle for More menu
+  const dropdownToggle = document.querySelector(".Dropdown-toggle");
+  const dropdownItem = document.querySelector(".Dropdown-item");
+  
+  if (dropdownToggle && dropdownItem) {
+    dropdownToggle.addEventListener("click", (e) => {
+      e.preventDefault();
+      dropdownItem.classList.toggle("active");
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!dropdownItem.contains(e.target)) {
+        dropdownItem.classList.remove("active");
+      }
+    });
+    
+    // Close dropdown when clicking on a link inside it
+    const dropdownLinks = document.querySelectorAll(".Dropdown-content a");
+    dropdownLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        dropdownItem.classList.remove("active");
+      });
+    });
+  }
 });
