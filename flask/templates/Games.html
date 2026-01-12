@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>TapTopUp</title>
 
   <!-- Fonts FIRST -->
@@ -10,19 +11,35 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- Then CSS -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
 </head>
 
 <body>
 
   <header>
     <nav class="GamesNav">
-      <a href="index.html">
-        <img src="IMAGES/Home_Logo.png" alt="Home Logo" class="logo">
+      <a href="{{ url_for('index')}}">
+        <img src="{{ url_for('static', filename='images/Home_Logo.png')}}" alt="Home Logo" class="logo">
       </a>
-      <div class="p">
-        <p>Fast. Secure. Ready when you are.</p>
-      </div>
+       <ul class="Navbar">
+        <li><a href="{{ url_for('games')}}">Games</a></li>
+        <li><a href="{{ url_for('promos')}}">Promos</a></li>       
+        <li><a href="{{ url_for('register')}}">Log in</a></li>
+    </ul>
+   <ul class="Dropdown">
+    <li>
+      <a href="#">
+        More
+        <img src="https://img.icons8.com/ios-filled/16/ffffff/sort-down.png" alt="Sort down icon">
+      </a>
+      <ul class="Dropdown-content">
+        <li><a href="{{ url_for('about')}}">About</a></li>
+        <li><a href="{{ url_for('contact')}}">Contact</a></li>
+        <li><a href="{{ url_for('guide')}}">Other</a></li>
+      </ul>
+    </li>
+  </ul>
+      
       <!-- Search -->
   <div class="search-Bar">
     <input type="text" placeholder="Search..." class="search-input">
@@ -33,27 +50,27 @@
 
  <!---->
        <div class="BigLogo">
-    <img src="IMAGES/FRONT_LOGO.png" alt="GameCurrencyLogo" usemap="#bigLogoMap"></div>
+    <img src="{{ url_for('static', filename='images/FRONT_LOGO.png')}}" alt="GameCurrencyLogo" usemap="#bigLogoMap"></div>
     <map name="bigLogoMap">
-  <area shape="rect" coords="30, 60, 270, 200" href="CodmTopUp.html" alt="codm">
-  <area shape="rect" coords="430, 60, 670, 200" href="ValorantTopUp.html" alt="valo">
-  <area shape="rect" coords="30, 270, 270, 420" href="LolTopUp.html" alt="lol">
-  <area shape="rect" coords="430, 270, 670, 420" href="MlTopUp.html" alt="ml">
+  <area shape="rect" coords="30, 60, 270, 200" href="{{ url_for('codm')}}" alt="codm">
+  <area shape="rect" coords="430, 60, 670, 200" href="{{ url_for('valorant')}}" alt="valo">
+  <area shape="rect" coords="30, 270, 270, 420" href="{{ url_for('lol')}}" alt="lol">
+  <area shape="rect" coords="430, 270, 670, 420" href="{{ url_for('ml')}}" alt="ml">
 </map>
 </div>
 
    <section class="Games-section">
         <h1 id="New">NEW</h1>
         <div class="popular-grid"> 
-        <a href="BsTopup.html"><img src="IMAGES/BS.jpg" id="bs" alt="BS-LOGO"></a>
-         <a href="genshintopup.html"><img src="IMAGES/Genshin_Impact.png" id="genshin" alt="ML-LOGO"></a></div>
+        <a href="{{ url_for('bs')}}"><img src="{{ url_for('static', filename='images/BS.jpg')}}" id="bs" alt="BS-LOGO"></a>
+         <a href="{{ url_for('genshin')}}"><img src="{{ url_for('static', filename='images/Genshin_Impact.png')}}" id="genshin" alt="genshin-LOGO"></a></div>
     
         <h1 id="Popular">POPULAR</h1>
-      <div class="popular-grid"> 
-        <a href="MlTopUp.html"><img src="IMAGES/ML.png" id="ml" alt="ML-LOGO"></a>
-        <a href="CodmTopUp.html"><img src="IMAGES/CODM.jpg" id="codm"alt="CODM-LOGO"></a>
-        <a href="ValorantTopUp.html"><img src="IMAGES/valorant-logo-png_seeklogo-379976.png" id="valo"alt="Valo-logo"></a>
-        <a href="LolTopUp.html"><img src="IMAGES/LOL.jpg" id="lol"alt="LOL-logo"></a>
+        <div class="popular-grid"> 
+        <a href="{{ url_for('ml') }}"><img src="{{ url_for('static', filename='images/ML.png')}}" id="ml" alt="ML-LOGO"></a>
+        <a href="{{ url_for('codm') }}"><img src="{{ url_for('static', filename='images/CODM.jpg')}}" id="codm"alt="CODM-LOGO"></a>
+        <a href="{{ url_for('valorant') }}"><img src="{{ url_for('static', filename='images/VALO.png')}}" id="valo"alt="Valo-logo"></a>
+        <a href="{{ url_for('lol') }}"><img src="{{ url_for('static', filename='images/LOL.jpg')}}" id="lol"alt="LOL-logo"></a>
       </div>
     </section>
 
@@ -73,22 +90,22 @@
 
   <div class="features">
     <figure>
-      <img src="IMAGES/wall-clock.png" alt="Fast Purchase">
+      <img src="{{ url_for('static', filename='images/wall-clock.png')}}" alt="Fast Purchase">
       <figcaption>Only takes a few seconds to complete a purchase</figcaption>
     </figure>
 
     <figure>
-      <img src="IMAGES/confetti.png" alt="Celebration">
+      <img src="{{ url_for('static', filename='images/confetti.png')}}" alt="Celebration">
       <figcaption>Exciting rewards and bonuses on every top-up</figcaption>
     </figure>
 
     <figure>
-      <a href="Contact.html"><img src="IMAGES/customer service.png" alt="Support"></a>
+      <a href="{{ url_for('contact') }}"><img src="{{ url_for('static', filename='images/customer service.png')}}" alt="Support"></a>
       <figcaption>24/7 customer service ready to help</figcaption>
     </figure>
 
     <figure>
-      <img src="IMAGES/gem.png" alt="Safe Payments">
+      <img src="{{ url_for('static', filename='images/gem.png')}}" alt="Safe Payments">
       <figcaption>Safe and secure payments guaranteed</figcaption>
     </figure>
   </div>
@@ -100,17 +117,17 @@
   <div class="footer-content">
     <p>&copy; 2025 TapTopUp. All rights reserved.</p>
     <ul class="footer-links">
-      <li><a href="About.html">About</a></li>
-      <li><a href="Guide.html">Support</a></li>
+      <li><a href="{{ url_for('about') }}">About</a></li>
+      <li><a href="{{ url_for('guide') }}">Support</a></li>
       <li><a href="mailto:ryanpolmalabanan2@gmail.com">Email us!</a></li>
-      <li><a href="Contact.html">Contact</a></li>
-      <li><a href="Promo.html">Promos</a></li>
+      <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      <li><a href="{{ url_for('promos') }}">Promos</a></li>
     </ul>
 
 <div class="socials">
-      <a href="#" id="facebook-icon"><img src="IMAGES/facebook-icon.png" alt="Facebook"></a> 
-      <a href="#"id="instagram-icon"><img src="IMAGES/instagram-icon.png" alt="Instagram"></a> 
-      <a href="#" id="discord-icon"><img src="IMAGES/discord-icon.png" alt="Discord"></a> 
+      <a href="#" id="facebook-icon"><img src="{{ url_for('static', filename='images/facebook-icon.png')}}" alt="Facebook"></a> 
+      <a href="#"id="instagram-icon"><img src="{{ url_for('static', filename='images/instagram-icon.png')}}" alt="Instagram"></a> 
+      <a href="#" id="discord-icon"><img src="{{ url_for('static', filename='images/discord-icon.png')}}" alt="Discord"></a> 
     </div>
   </div>
 </footer>

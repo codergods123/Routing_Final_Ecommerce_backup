@@ -40,8 +40,10 @@ body {
   margin-left: auto;
   margin-right: 20px;
   border-radius: 10px;
-  width: 450px; 
+  width: 90%;
+  max-width: 450px;
 }
+
 
 .search-button {
   background-color:maroon;
@@ -218,8 +220,7 @@ footer p {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   color: white;
   font-size: 30px;  /*---Header-----*/
-  position: relative;
-  left: 30px;
+  text-align: right;
 }
 .BigLogo{
   display: flexbox;
@@ -399,6 +400,7 @@ label {
   color: white;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
 /*----------------Promos--------------------------------*/
 .Promostoday h1{
   color: white;
@@ -622,298 +624,976 @@ legend{
   outline: none;
   transition: 0.2s ease;
 }
-/*--------------------------------------GAMES ML RECHARGE DETAILS --------------------------------------------------*/
-.ML-PAGE{
-   display: flex;
-  flex-direction: column; /* stack items vertically */
-  justify-content: center; /* vertical centering */
-  align-items: center;     /* horizontal centering */
-  margin: 50px;
-}
-.First img{
-  width: 250px;
-  margin: 20px;
-  border-radius: 10px;
-  border: solid;
-
+/*--------------------------------------GAMES ML RECHARGE DETAILS - CODASHOP STYLE --------------------------------------------------*/
+.ML-PAGE {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
-.First{
-  color: white;
-}
-#mlbbguide{
-  margin: 10px;
-  opacity: 70%;
-  color: maroon;
-  font-family:Arial, Helvetica, sans-serif ;
-}
-#userid{
-  width: 500px;
-}
-#userserver{
-  width: 500px;
-}
-.USERID{
-  background-color: white;
-  padding: 10px;
-  margin-bottom: 10px;
-  width: 1070px;
-  border-radius: 10px;
-}
-#enteruserid{
-  color: white;
-  font-family:"Orbitron";
-  background-color: maroon;
-  width: 180px;
-  border-radius: 5px;
-}
-#selectrecharge{
- color: white;
-  font-family:"Orbitron";
-  background-color:maroon;
-  width: 250px;
-  border-radius: 5px;
-}
-.RECHARGEZONE{
-  background-color: white;
-  padding: 10px;
-  margin-bottom: 10px;
-  width: 1070px;
-  border-radius: 10px;
-  font-family: "Orbitron";
+.First {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-.Elevendias{
- border: rgb(212, 212, 212);
- border-radius: 10px;
- border-style: solid;
- width: 170px;
- text-align: center;
- color: rgb(153, 7, 7);
- font-weight: bold;
-}
-.Elevendias img{
-  width: 80px;
-  height: 100px;
+.First img {
+  width: 200px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
 }
 
-.Pricebackgroundcolor{
-  background-color:rgb(234, 234, 234);
-  border-radius: 20px;
-  
-}
-.Elevendias:hover{
-  border-color: gray;
-}
-.Hundreddias{
-  border: rgb(212, 212, 212);
- border-radius: 10px;
- border-style: solid;
- width: 170px;
- text-align: center;
- color: rgb(153, 7, 7);
- font-weight: bold;
+.First img:hover {
+  transform: translateY(-5px);
 }
 
-.Hundreddias img{
-  width: 80px;
-  height: 100px;
-}
-.Hundreddias:hover{
-  border-color: gray;
-}
-.fivehdias{
-  border: rgb(212, 212, 212);
- border-radius: 10px;
- border-style: solid;
- width: 170px;
- text-align: center;
- color: rgb(153, 7, 7);
- font-weight: bold;
+/* Section Styling */
+.USERID,
+.RECHARGEZONE,
+.Payment-Method {
+  background: white;
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  width: 100%;
 }
 
-.fivehdias img{
-  width: 80px;
-  height: 100px;
-}
-.fivehdias:hover{
-  border-color: gray;
-}
-
-.Thousanddias{
-  border: rgb(212, 212, 212);
- border-radius: 10px;
- border-style: solid;
- width: 170px;
- text-align: center;
- color: rgb(153, 7, 7);
- font-weight: bold;
-}
-
-.Thousanddias img{
-  width: 80px;
-  height: 100px;
+/* Section Headers */
+#enteruserid,
+#selectrecharge,
+#selectpayment {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+  background: none;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 0;
+  border: none;
+  font-family: "Orbitron", sans-serif;
+  cursor: text;
 }
 
-.Thousanddias:hover{
-  border-color: gray;
+/* Input Fields */
+#userid,
+#userserver {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  margin-bottom: 15px;
 }
 
-.UserID-grid{
+#userid:focus,
+#userserver:focus {
+  outline: none;
+  border-color: maroon;
+  box-shadow: 0 0 0 3px rgba(128, 0, 0, 0.1);
+}
+
+#mlbbguide {
+  font-size: 13px;
+  color: #666;
+  background: #f9f9f9;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 15px;
+  line-height: 1.6;
+}
+
+.UserID-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin: 10px;
-}
-/*---PAYMENT METHOD*/
-.Payment-Method{
-  background-color:white;
-  padding: 10px;
-  margin-bottom: 10px;
-  width: 1070px;
-  border-radius: 10px;
+  gap: 20px;
+  margin-bottom: 0;
 }
 
-#selectpayment{
-  color: white;
-  font-family:"Orbitron";
-  background-color: maroon;
-  width: 220px;
-  border-radius: 5px;
+/* Recharge/Diamond Cards */
+.recharge-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin: 0;
 }
 
-.Gcash{
- border: rgb(212, 212, 212);
- border-radius: 10px;
- border-style: solid;
- width: 130px;
- text-align: center;
- color: rgb(153, 7, 7);
- font-weight: bold;
-}
-.Gcash:hover{
-  border-color: gray;
-}
-
-.Maya{
- border: rgb(212, 212, 212);
- border-radius: 10px;
- border-style: solid;
- width: 130px;
- text-align: center;
- color: rgb(153, 7, 7);
- font-weight: bold;
-}
-
-.Maya img{
-  width: 90px;
-}
-
-.Maya:hover{
-  border-color: gray;
-}
-
-.Visa{
- border: rgb(212, 212, 212);
- border-radius: 10px;
- border-style: solid;
- width: 130px;
- text-align: center;
- color: rgb(153, 7, 7);
- font-weight: bold;
-}
-
-.Visa:hover{
-  border-color: gray;
-}
-
-.SimCard{
- border: rgb(212, 212, 212);
- border-radius: 10px;
- border-style: solid;
- width: 130px;
- text-align: center;
- color: rgb(153, 7, 7);
- font-weight: bold;
-}
-
-.SimCard:hover{
-  border-color: gray;
-}
-
-.Bank{
- border: rgb(212, 212, 212);
- border-radius: 10px;
- border-style: solid;
- width: 130px;
- text-align: center;
- color: rgb(153, 7, 7);
- font-weight: bold;
-}
-
-.Bank:hover{
-  border-color: gray;
-}
-
-.Buybutton{
-  background-color: white;
-  width: 280px;
-  border-radius: 10px;
-}
-
-#buy-now{
-  font-size: 20px;
-  height: 60px;
-  border-radius: 10px;
-  width: 220px;
-  cursor: pointer;
-  font-weight: bold;
-  background-color: maroon;
-  color: white;
-  margin: 30px;
-  font-family: "Inter", sans serif;
-}
-
-/*---------------Selectable------------*/
 .recharge-grid input[type="radio"] {
   display: none;
 }
 
-/* Default card border */
 .recharge-grid label {
-  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #fff;
+}
+
+.recharge-grid label:hover {
+  border-color: maroon;
+  box-shadow: 0 4px 12px rgba(128, 0, 0, 0.1);
+  transform: translateY(-2px);
 }
 
 .recharge-grid label:has(input:checked) {
-  border: 3px solid green; /* green border */
-  background-color: #f0fdf0; /* optional light green bg */
-  color: red;
+  border-color: maroon;
+  background: #fff3f3;
+  box-shadow: 0 6px 16px rgba(128, 0, 0, 0.15);
 }
 
-.recharge-grid {
+.recharge-grid label p {
+  font-weight: 600;
+  color: #222;
+  margin: 10px 0 8px 0;
+  font-size: 15px;
+}
+
+.Elevendias,
+.Hundreddias,
+.fivehdias,
+.Thousanddias {
+  border: none !important;
+  width: 100% !important;
+  padding: 15px !important;
+  border-radius: 10px !important;
+  text-align: center;
+  color: inherit !important;
+  font-weight: 600;
+  background: white !important;
+}
+
+.Elevendias img,
+.Hundreddias img,
+.fivehdias img,
+.Thousanddias img {
+  width: 70px;
+  height: 85px;
+  object-fit: contain;
+}
+
+.Pricebackgroundcolor {
+  background: #f5f5f5;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+}
+
+.Pricebackgroundcolor mark {
+  background: #fff3cd;
+  padding: 2px 5px;
+  border-radius: 4px;
+  margin: 0 3px;
+}
+
+.Pricebackgroundcolor del {
+  color: #999;
+  font-size: 12px;
+}
+
+/* Payment Method Cards */
+.payment-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 16px;
-  margin: 20px;
-}
-
-.payment-grid{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  gap: 16px;
-  margin: 10px;
-}
-
-.payment-grid label:has(input:checked) {
-  border: 3px solid green; /* green border */
-  background-color: #f0fdf0; /* optional light green bg */
-  color: red;
-}
-
-.payment-grid label {
-  transition: all 0.2s;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  margin: 0;
 }
 
 .payment-grid input[type="radio"] {
   display: none;
+}
+
+.payment-grid label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #fff;
+  min-height: 120px;
+}
+
+.payment-grid label:hover {
+  border-color: maroon;
+  box-shadow: 0 4px 12px rgba(128, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.payment-grid label:has(input:checked) {
+  border-color: maroon;
+  background: #fff3f3;
+  box-shadow: 0 6px 16px rgba(128, 0, 0, 0.15);
+}
+
+.Gcash,
+.Maya,
+.Visa,
+.SimCard,
+.Bank {
+  border: none !important;
+  width: 100% !important;
+  padding: 0 !important;
+  text-align: center;
+  color: inherit !important;
+  font-weight: 600;
+  background: transparent !important;
+}
+
+.Gcash img,
+.Maya img,
+.Visa img,
+.SimCard img,
+.Bank img {
+  width: 60px;
+  height: auto;
+  margin-bottom: 8px;
+  object-fit: contain;
+}
+
+/* Buy Button */
+.Buybutton {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 30px;
+}
+
+#buy-now {
+  font-size: 16px;
+  padding: 14px 50px;
+  height: auto;
+  width: auto;
+  min-width: 220px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: linear-gradient(135deg, maroon 0%, #a80600 100%);
+  color: white;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(128, 0, 0, 0.2);
+}
+
+#buy-now:hover {
+  background: linear-gradient(135deg, #8b0000 0%, #8b0000 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(128, 0, 0, 0.3);
+}
+
+#buy-now:active {
+  transform: translateY(0);
+}
+
+/*================================================
+   RESPONSIVE DESIGN - MOBILE VIEW
+   ================================================*/
+
+/* Tablets and smaller screens (768px and below) */
+@media (max-width: 768px) {
+  /* Navigation */
+  .Navigation, .GamesNav {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .logo {
+    height: 40px;
+    width: 150px;
+    margin-bottom: 10px;
+  }
+
+  /* Navbar */
+  .Navbar {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  nav a {
+    font-size: 16px;
+    padding: 8px 10px;
+  }
+
+  /* Search Bar */
+  .search-Bar {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .search-input {
+    font-size: 14px;
+  }
+
+  .search-button {
+    padding: 8px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  /* Front page */
+  .front-page {
+    margin: 20px;
+  }
+
+  #Welcome {
+    font-size: 32px;
+  }
+
+  #H1text {
+    font-size: 48px;
+    border-radius: 50%;
+  }
+
+  #h3text {
+    font-size: 16px;
+  }
+
+  #ptext {
+    font-size: 14px;
+  }
+
+  #Enter-site {
+    padding: 12px;
+    font-size: 16px;
+    height: 45px;
+    width: 180px;
+    margin: 20px 10px;
+  }
+
+  /* Footer */
+  .footer-content {
+    height: auto;
+    padding: 15px;
+  }
+
+  footer p {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .footer-links li {
+    display: block;
+    margin: 5px 0;
+  }
+
+  #facebook-icon img,
+  #instagram-icon img,
+  #discord-icon img {
+    width: 30px;
+  }
+
+  /* Games Section */
+  .BigLogo img {
+    height: 250px;
+    width: auto;
+  }
+
+  .popular-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px;
+    justify-content: center;
+  }
+
+  #bs, #ml, #valo, #codm, #lol, #genshin {
+    width: 150px;
+    height: auto;
+  }
+
+  .valo-vid {
+    position: relative;
+    left: 0;
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+    padding: 0 15px;
+  }
+
+  .Games-section {
+    font-size: 16px;
+  }
+
+  #New, #Popular {
+    padding: 20px 15px;
+    font-size: 24px;
+  }
+
+  /* Features */
+  .features {
+    gap: 15px;
+  }
+
+  .features figure {
+    width: 150px;
+    padding: 15px;
+  }
+
+  .features img {
+    width: 50px;
+  }
+
+  /* About Section */
+  .about-background {
+    height: auto;
+  }
+
+  .AboutTTU h1 {
+    font-size: 36px;
+  }
+
+  .About-P {
+    font-size: 16px;
+    padding: 15px;
+  }
+
+  /* Promos Table */
+  .Promostoday h1 {
+    font-size: 32px;
+    margin-left: 15px;
+  }
+
+  .PromoAvailable, 
+  .PromoAvailable th, 
+  .PromoAvailable td {
+    width: 95%;
+    font-size: 14px;
+    margin: 10px auto;
+  }
+
+  /* ML/Game Pages */
+  .ML-PAGE {
+    margin: 15px;
+  }
+
+  .First img {
+    width: 180px;
+  }
+
+  .USERID, .RECHARGEZONE, .Payment-Method {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  #userid, #userserver {
+    width: 100%;
+  }
+
+  .UserID-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .recharge-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .payment-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .recharge-grid label {
+    padding: 12px;
+  }
+
+  .payment-grid label {
+    padding: 15px 10px;
+    min-height: 100px;
+  }
+
+  .Elevendias, .Hundreddias, .fivehdias, .Thousanddias {
+    width: 100%;
+  }
+
+  .Elevendias img, .Hundreddias img, .fivehdias img, .Thousanddias img {
+    width: 50px;
+    height: 60px;
+  }
+
+  .Gcash, .Maya, .Visa, .SimCard, .Bank {
+    width: 100%;
+  }
+
+  .Maya img {
+    width: 50px;
+  }
+
+  #enteruserid, #selectrecharge, #selectpayment {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  #mlbbguide {
+    font-size: 12px;
+  }
+
+  /* Login/Register */
+  .LoginBackground, .ContactInformation {
+    width: 95%;
+    height: auto;
+    padding: 15px;
+    margin: 10px auto 30px;
+  }
+
+  .signuptext {
+    font-size: 24px;
+  }
+
+  #username, #email, #password, #birth {
+    width: 100%;
+    margin-top: 15px;
+    height: 40px;
+  }
+
+  #message, #ctcreason {
+    width: 100%;
+  }
+
+  #ctcmessage, #ctcsubmit {
+    position: relative;
+    left: 0;
+    margin-top: 15px;
+  }
+
+  #PDFIFRAME {
+    width: 100%;
+    height: 600px;
+    padding: 0;
+    left: 0;
+  }
+
+  .SupportDetails {
+    font-size: 18px;
+    padding: 20px;
+  }
+
+  /* Dropdown */
+  .Dropdown-content {
+    min-width: 100px;
+  }
+
+  /* Why TapTopup Section */
+  .whytaptopup h1 {
+    font-size: 1.8rem;
+  }
+
+  .whytaptopup h4 {
+    font-size: 1.2rem;
+  }
+
+  .whytaptopup p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile phones (480px and below) */
+@media (max-width: 480px) {
+  /* Navigation */
+  .Navigation, .GamesNav {
+    flex-direction: column;
+    padding: 8px;
+  }
+
+  .logo {
+    height: 35px;
+    width: 120px;
+    margin-bottom: 10px;
+  }
+
+  /* Navbar */
+  .Navbar {
+    width: 100%;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  nav a {
+    font-size: 14px;
+    padding: 6px 8px;
+  }
+
+  /* Search Bar */
+  .search-Bar {
+    margin-top: 10px;
+    width: 100%;
+    order: 3;
+  }
+
+  .search-input {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .search-button {
+    padding: 6px;
+    height: 35px;
+    font-size: 12px;
+  }
+
+  /* Front page */
+  .front-page {
+    margin: 15px;
+    padding: 10px;
+  }
+
+  #Welcome {
+    font-size: 24px;
+  }
+
+  #H1text {
+    font-size: 36px;
+  }
+
+  #h3text {
+    font-size: 14px;
+  }
+
+  #ptext {
+    font-size: 12px;
+  }
+
+  #Enter-site {
+    padding: 10px;
+    font-size: 14px;
+    height: 40px;
+    width: 150px;
+    margin: 15px auto;
+  }
+
+  /* Footer */
+  .footer-content {
+    height: auto;
+  }
+
+  footer {
+    padding: 15px 0;
+  }
+
+  footer p {
+    font-size: 11px;
+  }
+
+  .footer-links li {
+    display: block;
+    margin: 3px 0;
+  }
+
+  #facebook-icon img,
+  #instagram-icon img,
+  #discord-icon img {
+    width: 25px;
+  }
+
+  .socials a {
+    margin: 0 3px;
+  }
+
+  /* Games Section */
+  .BigLogo img {
+    height: 200px;
+    width: auto;
+  }
+
+  .popular-grid {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  #bs, #ml, #valo, #codm, #lol, #genshin {
+    width: 120px;
+  }
+
+  .Games-section {
+    font-size: 14px;
+  }
+
+  #New, #Popular {
+    font-size: 20px;
+    padding: 15px;
+    margin: 10px 0;
+  }
+
+  /* Features */
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .features figure {
+    width: 100%;
+    max-width: 150px;
+  }
+
+  .features img {
+    width: 45px;
+  }
+
+  /* About Section */
+  .AboutTTU h1 {
+    font-size: 28px;
+  }
+
+  .About-P {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  /* Promos Table */
+  .Promostoday h1 {
+    font-size: 24px;
+    margin-left: 10px;
+  }
+
+  .PromoAvailable, 
+  .PromoAvailable th, 
+  .PromoAvailable td {
+    width: 100%;
+    font-size: 12px;
+    border: 3px solid rgb(64, 2, 2);
+  }
+
+  .PromoAvailable th, .PromoAvailable td {
+    padding: 8px 5px;
+  }
+
+  /* ML/Game Pages */
+  .ML-PAGE {
+    margin: 10px;
+  }
+
+  .First img {
+    width: 150px;
+  }
+
+  .USERID, .RECHARGEZONE, .Payment-Method {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  #userid, #userserver {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .UserID-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .recharge-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .payment-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .recharge-grid label {
+    padding: 12px;
+    border-radius: 8px;
+  }
+
+  .payment-grid label {
+    padding: 12px 8px;
+    min-height: 90px;
+  }
+
+  .Elevendias, .Hundreddias, .fivehdias, .Thousanddias {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .Elevendias img, .Hundreddias img, .fivehdias img, .Thousanddias img {
+    width: 45px;
+    height: 55px;
+  }
+
+  .Gcash, .Maya, .Visa, .SimCard, .Bank {
+    width: 100%;
+  }
+
+  .Maya img {
+    width: 50px;
+  }
+
+  #enteruserid, #selectrecharge, #selectpayment {
+    width: 100%;
+    padding: 0;
+    font-size: 16px;
+  }
+
+  #mlbbguide {
+    font-size: 11px;
+    margin: 10px 0;
+  }
+
+  #buy-now {
+    width: 100%;
+    padding: 12px 20px;
+    min-width: auto;
+    font-size: 14px;
+    margin: 20px 0;
+  }
+
+  /* Login/Register */
+  .LoginBackground, .ContactInformation {
+    width: 100%;
+    height: auto;
+    padding: 12px;
+    margin: 10px auto 20px;
+    border-radius: 8px;
+  }
+
+  .LogInContainer {
+    padding: 10px;
+  }
+
+  .signuptext {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  #username, #email, #password, #birth {
+    width: 100%;
+    margin-top: 12px;
+    height: 38px;
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  label {
+    display: block;
+    margin: 10px 0;
+    padding: 8px 15px;
+    width: auto;
+  }
+
+  #message, #ctcreason {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  #message {
+    height: 100px;
+  }
+
+  #ctcmessage {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  #ctcsubmit, #Signupbutton, #buy-now {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    height: auto;
+    margin: 10px 0;
+  }
+
+  .Buybutton {
+    width: 100%;
+  }
+
+  #PDFIFRAME {
+    width: 100%;
+    height: 500px;
+    padding: 0;
+    left: 0;
+    border-radius: 5px;
+  }
+
+  .SupportDetails {
+    font-size: 16px;
+    padding: 15px;
+  }
+
+  /* Contact */
+  .ContactContainer {
+    height: auto;
+    flex-direction: column;
+    padding: 15px 0;
+  }
+
+  .FieldContainer {
+    width: 95%;
+    margin: 0 auto 15px;
+  }
+
+  /* Dropdown */
+  .Dropdown-content {
+    min-width: 100px;
+    top: auto;
+    bottom: -100px;
+  }
+
+  .p {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  /* Why TapTopup Section */
+  .whytaptopup {
+    padding: 20px 10px;
+  }
+
+  .whytaptopup h1 {
+    font-size: 1.5rem;
+  }
+
+  .whytaptopup h4 {
+    font-size: 1rem;
+  }
+
+  .whytaptopup p {
+    font-size: 0.85rem;
+  }
+
+  /* Body backgrounds */
+  body {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .about-background,
+  .promobackground,
+  .registerbackground {
+    height: auto;
+  }
+
+  /* Buttons */
+  button {
+    font-size: 14px;
+  }
 }

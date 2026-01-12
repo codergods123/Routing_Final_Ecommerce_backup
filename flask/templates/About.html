@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>TapTopUp</title>
 
   <!-- Fonts FIRST -->
@@ -10,19 +11,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Then CSS -->
-  <link rel="stylesheet" href="style.css">
+ <!-- Then CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
 </head>
+
 
 <body>
  <header class="">
 <nav class="Navigation">
-    <a href="index.html"><img src="IMAGES/Home_Logo.png" alt="Home Logo" class="logo"></a>
+    <a href="{{ url_for('index')}}"><img src="{{ url_for('static', filename='images/Home_Logo.png')}}" alt="Home Logo" class="logo"></a>
 
     <ul class="Navbar">
-        <li><a href="Games.html">Games</a></li>
-        <li><a href="Promo.html">Promos</a></li>       
-        <li><a href="Register.html">Log in</a></li>
+        <li><a href="{{ url_for('games')}}">Games</a></li>
+        <li><a href="{{ url_for('promos')}}">Promos</a></li>       
+        <li><a href="{{ url_for('register')}}">Log in</a></li>
     </ul>
    <ul class="Dropdown">
     <li>
@@ -31,9 +33,9 @@
         <img src="https://img.icons8.com/ios-filled/16/ffffff/sort-down.png" alt="Sort down icon">
       </a>
       <ul class="Dropdown-content">
-        <li><a href="About.html">About</a></li>
-        <li><a href="Contact.html">Contact</a></li>
-        <li><a href="Guide.html">Guide</a></li>
+        <li><a href="{{ url_for('about')}}">About</a></li>
+        <li><a href="{{ url_for('contact')}}">Contact</a></li>
+        <li><a href="{{ url_for('guide')}}">Guide</a></li>
       </ul>
     </li>
   </ul>
@@ -55,18 +57,19 @@
   <div class="footer-content">
     <p>&copy; 2025 TapTopUp. All rights reserved.</p>
     <ul class="footer-links">
-      <li><a href="About.html">About</a></li>
-      <li><a href="Guide.html">Support</a></li>
+      <li><a href="{{ url_for('about')}}">About</a></li>
+      <li><a href="{{ url_for('guide')}}">Support</a></li>
       <li><a href="mailto:ryanpolmalabanan2@gmail.com">Email us!</a></li>
-      <li><a href="Contact.html">Contact</a></li>
-      <li><a href="Promo.html">Promos</a></li>
+      <li><a href="{{ url_for('contact')}}">Contact</a></li>
+      <li><a href="{{ url_for('promos')}}">Promos</a></li>
     </ul>
 
     <div class="socials">
-      <a href="#" id="facebook-icon"><img src="IMAGES/facebook-icon.png" alt="Facebook"></a> 
-      <a href="#"id="instagram-icon"><img src="IMAGES/instagram-icon.png" alt="Instagram"></a> 
-      <a href="#" id="discord-icon"><img src="IMAGES/discord-icon.png" alt="Discord"></a> 
+      <a href="#" id="facebook-icon"><img src="{{ url_for('static', filename='images/facebook-icon.png')}}" alt="Facebook"></a> 
+      <a href="#"id="instagram-icon"><img src="{{ url_for('static', filename='images/instagram-icon.png')}}" alt="Instagram"></a> 
+      <a href="#" id="discord-icon"><img src="{{ url_for('static', filename='images/discord-icon.png')}}" alt="Discord"></a> 
     </div>
   </div>
 </footer>
+
 </body>

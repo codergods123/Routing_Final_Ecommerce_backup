@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TapTopUp</title>
+
+  <!-- Fonts FIRST -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+
+ <!-- Then CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+</head>
+<body>
+  <header>
+    <nav class="GamesNav">
+      <a href="{{ url_for('index')}}">
+        <img src="{{ url_for('static', filename='images/Home_Logo.png')}}" alt="Home Logo" class="logo">
+      </a>
+      <ul class="Navbar">
+        <li><a href="{{ url_for('games')}}">Games</a></li>
+        <li><a href="{{ url_for('promos')}}">Promos</a></li>       
+        <li><a href="{{ url_for('register')}}">Log in</a></li>
+    </ul>
+   <ul class="Dropdown">
+    <li>
+      <a href="#">
+        More
+        <img src="https://img.icons8.com/ios-filled/16/ffffff/sort-down.png" alt="Sort down icon">
+      </a>
+      <ul class="Dropdown-content">
+        <li><a href="{{ url_for('about')}}">About</a></li>
+        <li><a href="{{ url_for('contact')}}">Contact</a></li>
+        <li><a href="{{ url_for('guide')}}">Other</a></li>
+      </ul>
+    </li>
+  </ul>
+      <div class="p">
+        <p>Fast. Secure. Ready when you are.</p>
+      </div>
+    </nav>
+  </header>
+
+<div class="ML-PAGE">
+    <div class="First">
+        <img src="{{ url_for('static', filename='images/VALORANT.jpg')}}" alt="VALO-Logo"></div>
+        
+  <section> 
+        <div class="USERID">
+        <h2 id="enteruserid">Enter User ID</h2>
+        <div class="UserID-grid">
+        <input type="text"  placeholder="Enter User ID" id="userid" >
+        <input type="text" placeholder="Zone ID" id="userserver" >
+        <p id="mlbbguide">To find your User ID, click on your avatar in the top left corner of the main game screen. Then go to the "Basic Info" tab. Your user ID is shown below your nickname. Please input the complete user ID here, e.g. 12345678(1234).</p>
+        </div></div></section>
+
+        <section> 
+          <div class="RECHARGEZONE">
+            <h2 id="selectrecharge">Select Recharge</h2>
+           <div class="recharge-grid"> 
+  <label class="Elevendias">
+    <input type="radio" name="diamond" value="11">
+    <p>11  Valorant points</p>
+    <img src="{{ url_for('static', filename='images/valorantpoints.png')}}" alt="Elevendias">
+    <div class="Pricebackgroundcolor">From<br>₱10.64<br><mark>-18%</mark> <del>₱13</del></div>
+  </label>
+
+  <label class="Hundreddias">
+    <input type="radio" name="diamond" value="120">
+    <p>120  Valorant points</p>
+    <img src="{{ url_for('static', filename='images/valorantpoints.png')}}" alt="Hundreddias">
+    <div class="Pricebackgroundcolor">From<br>₱106.40<br><mark>-18%</mark> <del>₱130</del></div>
+  </label>
+
+  <label class="fivehdias"> 
+    <input type="radio" name="diamond" value="500">
+    <p>500  Valorant points</p>
+    <img src="{{ url_for('static', filename='images/valorantpoints.png')}}" alt="Five hundred dias">
+    <div class="Pricebackgroundcolor">From<br>₱532<br><mark>-18%</mark> <del>₱650</del></div>
+  </label>
+
+  <label class="Thousanddias">
+    <input type="radio" name="diamond" value="1000">
+    <p>1000 Valorant points</p>
+    <img src="{{ url_for('static', filename='images/valorantpoints.png')}}" alt="One thousand dias">
+    <div class="Pricebackgroundcolor">From<br>₱1064<br><mark>-18%</mark> <del>₱1300</del></div>
+  </label>
+</div>
+
+         </div>
+        </section>
+        <section>
+          <div class="Payment-Method">
+          <h2 id="selectpayment">Select Payment</h2>
+          <div class="payment-grid"> 
+            <label class="Gcash">
+              <input type="radio" name="payment" value="Gcash">
+              <img src="{{ url_for('static', filename='images/GCASH_LOGO.webp')}}" alt="gcashlogo">
+              <h5>GCASH</h5>
+            </label>
+
+            <label class="Maya">
+              <input type="radio" name="payment" value="Maya">
+              <img src="{{ url_for('static', filename='images/paymaya_logo.png')}}" alt="mayalogo">
+              <h5>MAYA</h5>
+            </label>
+          
+             <label class="Visa">
+              <input type="radio" name="payment" value="Visa">
+              <img src="{{ url_for('static', filename='images/CARD_PAYMENT_PH_PH_CHNL_LOGO.webp')}}" alt="Visalogo">
+              <h5>CARD PAYMENT</h5>
+             </label>
+
+            <label class="SimCard">
+              <input type="radio" name="payment" value="Smart">
+              <img src="{{ url_for('static', filename='images/SMART_PH_CHNL_LOGO.webp')}}" alt="Smart/Sunlogo">
+              <h5>SMART/SUN</h5>
+            </label>
+
+             <label class="Bank">
+              <input type="radio" name="payment" value="Bank">
+              <img src="{{ url_for('static', filename='images/banklogo.jpg')}}" alt="Banklogo">
+              <h5>BANK PAYMENT</h5>
+             </label>
+          </div>
+        </section>
+          <button id="buy-now">PURCHASE</button>
+</div>
+
+
+
+
+<footer>
+  <div class="footer-content">
+    <p>&copy; 2025 TapTopUp. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="{{ url_for('about')}}">About</a></li>
+      <li><a href="{{ url_for('guide')}}">Support</a></li>
+      <li><a href="mailto:ryanpolmalabanan2@gmail.com">Email us!</a></li>
+      <li><a href="{{ url_for('contact')}}">Contact</a></li>
+      <li><a href="{{ url_for('promos')}}">Promos</a></li>
+    </ul>
+
+    <div class="socials">
+      <a href="#" id="facebook-icon"><img src="{{ url_for('static', filename='images/facebook-icon.png')}}" alt="Facebook"></a> 
+      <a href="#"id="instagram-icon"><img src="{{ url_for('static', filename='images/instagram-icon.png')}}" alt="Instagram"></a> 
+      <a href="#" id="discord-icon"><img src="{{ url_for('static', filename='images/discord-icon.png')}}" alt="Discord"></a> 
+    </div>
+  </div>
+</footer>
+
+<script src="{{ url_for('static', filename='js/Script.js')}}"></script>
+</body>

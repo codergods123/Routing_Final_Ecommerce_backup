@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 
-app =Flask(__name__, template_folder='templates')
+app = Flask(__name__, template_folder='templates')
 
 @app.route('/')
 def index ():
@@ -30,5 +30,29 @@ def contact ():
 def guide ():
     return render_template('Guide.html')
 
+@app.route('/ml')
+def ml ():
+    return render_template('MlTopUp.html')
+
+@app.route('/codm')
+def codm ():
+    return render_template('CodmTopUp.html')
+
+@app.route('/valorant')
+def valorant ():
+    return render_template('ValorantTopUp.html')
+
+@app.route('/lol')
+def lol ():
+    return render_template('LolTopUp.html')
+
+@app.route('/bs')
+def bs ():
+    return render_template('BsTopup.html')
+
+@app.route('/genshin')
+def genshin ():
+    return render_template('genshintopup.html')
+
 if __name__ == '__main__':
-    app.run(debug=True)
+   app.run(host="0.0.0.0", port=5000, debug=True)
