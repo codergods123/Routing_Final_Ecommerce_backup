@@ -4,6 +4,10 @@
     box-sizing: border-box;   
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html, body {
   height: 100%;
   margin: 0;
@@ -27,6 +31,8 @@ body {
   gap: 1rem;
   background-color: #202020;
   padding: 0.5rem;
+  position: relative;
+  z-index: 100;
 }
 
 .Navigation :hover {
@@ -41,6 +47,8 @@ body {
   gap: 1rem;
   background-color: #202020;
   padding: 0.5rem;
+  position: relative;
+  z-index: 100;
 }
 
 /* Search Bar */
@@ -62,6 +70,7 @@ body {
   transition: background-color 0.3s ease;
   padding: 0.625rem;
   height: 3.75rem;
+  width: 30%;
 }
 
 .search-button:hover {
@@ -106,6 +115,7 @@ nav a {
   margin: 0;
   display: inline-block;
   position: relative;
+  z-index: 1001;
 }
 
 .Dropdown > li {
@@ -130,15 +140,23 @@ nav a {
   padding: 0;
   top: 100%;
   left: 0;
-  min-width: 120px;
+  min-width: 150px;
   border-radius: 5px;
-  z-index: 9999;
+  z-index: 10001;
+  pointer-events: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .Dropdown-content li a {
   display: block;
-  padding: 0.625rem;
+  padding: 0.75rem 1rem;
   color: white;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+}
+
+.Dropdown-content li a:hover {
+  background-color: #333;
 }
 
 .Dropdown li.active .Dropdown-content {
@@ -825,6 +843,8 @@ legend {
   margin: 2.5rem auto;
   padding: 0 1rem;
   width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .First {
@@ -1112,6 +1132,58 @@ legend {
 
 /* Tablets (768px and below) */
 @media (max-width: 768px) {
+  /* Navbar optimization for tablet and mobile */
+  .Navigation,
+  .GamesNav {
+    padding: 0.4rem 0.5rem;
+    gap: 0.3rem;
+    min-height: 56px;
+    overflow: visible;
+    position: relative;
+    z-index: 100;
+  }
+
+  .logo {
+    height: 36px;
+    width: auto;
+    max-width: 100%;
+  }
+
+  nav a {
+    padding: 0.25rem 0.4rem;
+    font-size: 0.8rem;
+  }
+
+  .Dropdown a {
+    padding: 0.25rem 0.4rem;
+    font-size: 0.8rem;
+  }
+
+  .Dropdown-toggle img {
+    height: 14px;
+    width: 14px;
+  }
+
+  /* Search bar optimization */
+  .search-Bar {
+    width: calc(100% - 1rem);
+    max-width: 400px;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .search-input {
+    height: 36px;
+    padding: 0.4rem 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .search-button {
+    height: 36px;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
+  }
+
   .UserID-grid {
     grid-template-columns: 1fr;
   }
@@ -1129,37 +1201,97 @@ legend {
   }
 }
 
-/* Small devices (576px and below) */
+/* Extra small devices (576px and below) */
 @media (max-width: 576px) {
-  /* Navigation - stack vertically */
+  /* Navigation - ultra-compact mobile view */
   .Navigation,
   .GamesNav {
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 0.5rem;
+    padding: 0.3rem 0.4rem;
+    gap: 0.2rem;
+    min-height: 56px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: visible;
+    position: relative;
+    z-index: 100;
   }
 
   .logo {
-    width: 100%;
-    max-width: 10rem;
-    height: auto;
+    height: 32px;
+    width: auto;
+    flex-shrink: 0;
   }
 
   .Navbar {
-    width: 100%;
-    justify-content: center;
-    gap: 0.5rem;
+    display: flex;
+    gap: 0.1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 
   nav a {
-    padding: 0.5rem 0.75rem;
-    font-size: 1rem;
+    padding: 0.2rem 0.3rem;
+    font-size: 0.7rem;
+    white-space: nowrap;
   }
 
+  .Dropdown {
+    padding: 0;
+    position: relative;
+    z-index: 1001;
+    overflow: visible;
+  }
+
+  .Dropdown > li {
+    position: relative;
+    overflow: visible;
+  }
+
+  .Dropdown a {
+    padding: 0.2rem 0.3rem;
+    font-size: 0.7rem;
+    white-space: nowrap;
+  }
+
+  .Dropdown-content {
+    position: fixed;
+    z-index: 10001;
+    pointer-events: auto;
+    min-width: 150px;
+    display: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .Dropdown li.active .Dropdown-content {
+    display: block;
+  }
+
+  .Dropdown-toggle img {
+    height: 12px;
+    width: 12px;
+  }
+
+  /* Search bar on small screens */
   .search-Bar {
-    width: 100% !important;
-    margin: 0.5rem 0 !important;
-    order: 3;
+    width: auto;
+    max-width: none;
+    min-width: 200px;
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+  }
+
+  .search-input {
+    height: 36px;
+    padding: 0.3rem 0.4rem;
+    font-size: 0.7rem;
+    min-width: 120px;
+  }
+
+  .search-button {
+    height: 36px;
+    padding: 0.3rem 0.4rem;
+    font-size: 0.65rem;
   }
 
   /* Front page */
@@ -1379,13 +1511,31 @@ legend {
   }
 
   /* Dropdown */
+  .Dropdown {
+    position: relative;
+    z-index: 1000;
+    overflow: visible;
+  }
+
+  .Dropdown > li {
+    position: relative;
+    overflow: visible;
+  }
+
   .Dropdown-content {
-    /* place dropdown directly under its toggle on small screens */
     position: absolute;
     top: 100%;
     left: 0;
     bottom: auto;
-    z-index: 9999;
+    z-index: 10000;
+    pointer-events: auto;
+    min-width: 150px;
+    display: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .Dropdown li.active .Dropdown-content {
+    display: block;
   }
 
   /* Section headers */
@@ -1412,5 +1562,14 @@ legend {
   input[type="radio"] + label {
     min-height: 44px;
     min-width: 44px;
+  }
+
+  /* Mobile: Hide dropdown content on mobile (≤576px), More button scrolls to footer */
+  .Dropdown-content {
+    display: none !important;
+  }
+
+  .Dropdown li.active .Dropdown-content {
+    display: none !important;
   }
 }
