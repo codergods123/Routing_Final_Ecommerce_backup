@@ -49,12 +49,15 @@
     <div class="First">
         <img src="{{ url_for('static', filename='images/CODM.jpg')}}" alt="CODM-Logo"></div>
         
+<form id="topup-form">
   <section> 
         <div class="USERID">
-        <h2 id="enteruserid">Enter User ID</h2>
+        <h2 id="enteruserid">Enter User Information</h2>
         <div class="UserID-grid">
-        <input type="text"  placeholder="Enter User ID" id="userid" >
-        <input type="text" placeholder="Zone ID" id="userserver" >
+        <input type="text" placeholder="Username" id="username" name="username" required>
+        <input type="email" placeholder="Email" id="email" name="email" required>
+        <input type="text" placeholder="Enter Game User ID" id="userid" name="userid" required>
+        <input type="text" placeholder="Zone ID (if applicable)" id="userserver" name="userserver">
         <p id="mlbbguide">To find your User ID, click on your avatar in the top left corner of the main game screen. Then go to the "Basic Info" tab. Your user ID is shown below your nickname. Please input the complete user ID here, e.g. 12345678(1234).</p>
         </div></div></section>
 
@@ -63,28 +66,28 @@
             <h2 id="selectrecharge">Select Recharge</h2>
            <div class="recharge-grid"> 
   <label class="Elevendias">
-    <input type="radio" name="Shells" value="11">
+    <input type="radio" name="Shells" value="11" data-price="10.64" required>
     <p>11 Shells</p>
     <img src="{{ url_for('static', filename='images/GARENA_Shells.png')}}" alt="11_Shells">
     <div class="Pricebackgroundcolor">From<br>₱10.64<br><mark>-18%</mark> <del>₱13</del></div>
   </label>
 
   <label class="Hundreddias">
-    <input type="radio" name="Shells" value="120">
+    <input type="radio" name="Shells" value="120" data-price="106.40" required>
     <p>120 Shells</p>
     <img src="{{ url_for('static', filename='images/GARENA_Shells.png')}}" alt="100_shells">
     <div class="Pricebackgroundcolor">From<br>₱106.40<br><mark>-18%</mark> <del>₱130</del></div>
   </label>
 
   <label class="fivehdias"> 
-    <input type="radio" name="Shells" value="500">
+    <input type="radio" name="Shells" value="500" data-price="532" required>
     <p>500 Shells</p>
     <img src="{{ url_for('static', filename='images/GARENA_Shells.png')}}" alt="Five hundred shells">
     <div class="Pricebackgroundcolor">From<br>₱532<br><mark>-18%</mark> <del>₱650</del></div>
   </label>
 
   <label class="Thousanddias">
-    <input type="radio" name="Shells" value="1000">
+    <input type="radio" name="Shells" value="1000" data-price="1064" required>
     <p>1000 Shells</p>
     <img src="{{ url_for('static', filename='images/GARENA_Shells.png')}}" alt="One thousand shells">
     <div class="Pricebackgroundcolor">From<br>₱1064<br><mark>-18%</mark> <del>₱1300</del></div>
@@ -100,37 +103,38 @@
           <h2 id="selectpayment">Select Payment</h2>
           <div class="payment-grid"> 
             <label class="Gcash">
-              <input type="radio" name="payment" value="Gcash">
+              <input type="radio" name="payment" value="Gcash" required>
               <img src="{{ url_for('static', filename='images/GCASH_LOGO.webp')}}" alt="gcashlogo">
               <h5>GCASH</h5>
             </label>
 
             <label class="Maya">
-              <input type="radio" name="payment" value="Maya">
+              <input type="radio" name="payment" value="Maya" required>
               <img src="{{ url_for('static', filename='images/paymaya_logo.png')}}" alt="mayalogo">
               <h5>MAYA</h5>
             </label>
           
              <label class="Visa">
-              <input type="radio" name="payment" value="Visa">
+              <input type="radio" name="payment" value="Visa" required>
               <img src="{{ url_for('static', filename='images/CARD_PAYMENT_PH_PH_CHNL_LOGO.webp')}}" alt="Visalogo">
               <h5>CARD PAYMENT</h5>
              </label>
 
             <label class="SimCard">
-              <input type="radio" name="payment" value="Smart">
+              <input type="radio" name="payment" value="Smart" required>
               <img src="{{ url_for('static', filename='images/SMART_PH_CHNL_LOGO.webp')}}" alt="Smart/Sunlogo">
               <h5>SMART/SUN</h5>
             </label>
 
              <label class="Bank">
-              <input type="radio" name="payment" value="Bank">
+              <input type="radio" name="payment" value="Bank" required>
               <img src="{{ url_for('static', filename='images/banklogo.jpg')}}" alt="Banklogo">
               <h5>BANK PAYMENT</h5>
              </label>
           </div>
         </section>
-          <button id="buy-now">PURCHASE</button>
+          <button type="submit" id="buy-now">PURCHASE</button>
+</form>
 </div>
 <footer id="footer">
   <div class="footer-content">
